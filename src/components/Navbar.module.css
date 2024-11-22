@@ -1,0 +1,46 @@
+/* Style de la Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espace entre le logo et les liens */
+    align-items: center;
+    height: 80px; /* Définir une hauteur fixe */
+    background-color: #000000; /* Couleur de fond */
+    padding: 0 2rem; /* Espacement horizontal */
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet */
+  }
+  
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  /* Style pour l'image dans le logo */
+.logo img {
+    border-radius: 50%; /* Rendre l'image circulaire */
+    display: block; /* Assure un bon rendu */
+  }
+  
+  
+  /* Liste des liens */
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Pousse les liens à droite */
+  }
+  
+  /* Style des liens */
+  .navLink {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    color: #1e90ff; /* Couleur au survol */
+  }
+  
