@@ -15,32 +15,48 @@
     display: flex;
     align-items: center;
   }
+  
   /* Style pour l'image dans le logo */
-.logo img {
+  .logo img {
     border-radius: 50%; /* Rendre l'image circulaire */
     display: block; /* Assure un bon rendu */
   }
   
-  
-  /* Liste des liens */
+  /* Liste des liens alignés en ligne */
   .navLinks {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+    list-style: none; /* Supprime les puces de la liste */
+    display: flex; /* Permet d'aligner les éléments horizontalement */
+    gap: 2rem; /* Espacement entre chaque lien */
     margin: 0;
     padding: 0;
-    margin-left: auto; /* Pousse les liens à droite */
   }
   
   /* Style des liens */
   .navLink {
     text-decoration: none;
-    color: white;
+    color: #34c924;
     font-weight: bold;
+    position: relative; /* Nécessaire pour la barre animée */
     transition: color 0.3s ease;
   }
   
-  .navLink:hover {
-    color: #1e90ff; /* Couleur au survol */
+  /* Barre initialement invisible */
+  .navLink::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #34c924;
+    transition: width 0.3s ease; /* Animation de l'extension */
+    position: absolute;
+    bottom: -5px; /* Place la barre juste en dessous du texte */
+    left: 0;
   }
+  
+  /* Barre visible au survol */
+  .navLink:hover::after {
+    width: 100%; /* La barre s'étend sous le lien */
+  }
+  
+  /* Couleur au survol */
+  
   
