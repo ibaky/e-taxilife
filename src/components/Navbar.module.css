@@ -1,32 +1,38 @@
 /* Style de la Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Espace entre le logo et les liens */
-    align-items: center;
-    height: 80px; /* Définir une hauteur fixe */
+    justify-content: space-between; /* Sépare le logo des liens */
+    align-items: flex-start; /* Aligne les éléments au début */
     background-color: #000000; /* Couleur de fond */
     padding: 0 2rem; /* Espacement horizontal */
     color: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet */
+    height: auto; /* Permet d'ajuster la hauteur selon le contenu */
   }
   
-  /* Logo */
-  .logo {
+  /* Conteneur pour les liens et le numéro */
+  .navContent {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Affiche les éléments verticalement */
+    align-items: flex-start; /* Alignement à gauche */
+    margin-left: auto; /* Pousse le contenu à droite */
   }
   
-  /* Style pour l'image dans le logo */
-  .logo img {
-    border-radius: 50%; /* Rendre l'image circulaire */
-    display: block; /* Assure un bon rendu */
+  /* Conteneur pour le numéro de téléphone */
+  .phoneContainer {
+    background-color: #34c924; /* Fond blanc */
+    color: black; /* Texte noir */
+    padding: 0.3rem 0.8rem; /* Espacement autour du texte */
+    border-radius: 4px; /* Coins arrondis */
+    margin-bottom: 0.5rem; /* Espacement sous le numéro */
+    font-weight: bold;
+    margin-left: auto;
   }
   
-  /* Liste des liens alignés en ligne */
+  /* Liste des liens alignés horizontalement */
   .navLinks {
     list-style: none; /* Supprime les puces de la liste */
-    display: flex; /* Permet d'aligner les éléments horizontalement */
-    gap: 2rem; /* Espacement entre chaque lien */
+    display: flex; /* Aligne les liens horizontalement */
+    gap: 1.5rem; /* Espacement entre les liens */
     margin: 0;
     padding: 0;
   }
@@ -40,7 +46,7 @@
     transition: color 0.3s ease;
   }
   
-  /* Barre initialement invisible */
+  /* Barre sous les liens */
   .navLink::after {
     content: '';
     width: 0;
@@ -52,11 +58,12 @@
     left: 0;
   }
   
-  /* Barre visible au survol */
   .navLink:hover::after {
     width: 100%; /* La barre s'étend sous le lien */
   }
-  
-  /* Couleur au survol */
-  
+  .logo img {
+    border-radius: 50%; /* Rend l'image circulaire */
+    display: block; /* Évite les espaces blancs autour de l'image */
+    object-fit: cover; /* Assure que l'image remplit bien son conteneur */
+  }
   
