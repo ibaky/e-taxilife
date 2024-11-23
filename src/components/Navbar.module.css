@@ -1,69 +1,93 @@
 /* Style de la Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Sépare le logo des liens */
-    align-items: flex-start; /* Aligne les éléments au début */
+    justify-content: space-between; /* Espace entre le logo et les liens */
+    align-items: center;
+    height: 100px; /* Définir une hauteur fixe */
     background-color: #000000; /* Couleur de fond */
     padding: 0 2rem; /* Espacement horizontal */
     color: white;
-    height: auto; /* Permet d'ajuster la hauteur selon le contenu */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet */
   }
   
-  /* Conteneur pour les liens et le numéro */
-  .navContent {
+  /* Logo */
+  .logo {
     display: flex;
-    flex-direction: column; /* Affiche les éléments verticalement */
-    align-items: flex-start; /* Alignement à gauche */
-    margin-left: auto; /* Pousse le contenu à droite */
+    align-items: center;
   }
   
-  /* Conteneur pour le numéro de téléphone */
-  .phoneContainer {
-    background-color: #34c924; /* Fond blanc */
-    color: black; /* Texte noir */
-    padding: 0.3rem 0.8rem; /* Espacement autour du texte */
-    border-radius: 4px; /* Coins arrondis */
-    margin-bottom: 0.5rem; /* Espacement sous le numéro */
-    font-weight: bold;
-    margin-left: auto;
+  /* Style pour l'image dans le logo */
+  .logo img {
+    border-radius: 50%; /* Rendre l'image circulaire */
+    display: block; /* Assure un bon rendu */
   }
   
-  /* Liste des liens alignés horizontalement */
+  /* Liste des liens */
   .navLinks {
-    list-style: none; /* Supprime les puces de la liste */
-    display: flex; /* Aligne les liens horizontalement */
-    gap: 1.5rem; /* Espacement entre les liens */
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
+    margin-left: auto; /* Pousse les liens à droite */
   }
   
   /* Style des liens */
   .navLink {
     text-decoration: none;
-    color: #34c924;
+    color:#24f109 ;
     font-weight: bold;
-    position: relative; /* Nécessaire pour la barre animée */
+    position: relative; /* Nécessaire pour placer l'animation */
+    padding-bottom: 5px; /* Espace pour l'animation */
     transition: color 0.3s ease;
+    font-size: 25px;
   }
   
-  /* Barre sous les liens */
+ 
+  /* Barre animée sous les liens */
   .navLink::after {
     content: '';
-    width: 0;
-    height: 2px;
-    background: #34c924;
-    transition: width 0.3s ease; /* Animation de l'extension */
     position: absolute;
-    bottom: -5px; /* Place la barre juste en dessous du texte */
     left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #24f109; /* Couleur de la barre */
+    transition: width 0.3s ease-in-out;
   }
   
   .navLink:hover::after {
-    width: 100%; /* La barre s'étend sous le lien */
+    width: 100%; /* La barre s'étend sur toute la largeur au survol */
   }
-  .logo img {
-    border-radius: 50%; /* Rend l'image circulaire */
-    display: block; /* Évite les espaces blancs autour de l'image */
-    object-fit: cover; /* Assure que l'image remplit bien son conteneur */
+  
+  /* Lien actif (barre permanente) */
+  .navLink.active::after {
+    width: 100%; /* La barre est toujours visible pour le lien actif */
+  }
+  
+  /* Conteneur pour le numéro de téléphone et l'animation */
+  .phoneContainer {
+    display: flex; /* Aligne l'animation et le numéro sur une ligne */
+    align-items: center; /* Centre verticalement */
+    gap: 10px; /* Espace entre l'animation et le numéro */
+    border: 2px solid green; /* Bordure verte */
+    padding: 5px 5px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #e8f5e9; /* Fond vert clair */
+    width: 250px;
+    margin-left: 250px;
+  }
+  
+  /* Style du numéro de téléphone */
+  .phoneNumber {
+    font-size: 18px;
+    font-weight: bold;
+    color:#24f109; /* Texte vert foncé */
+  }
+  
+  /* Ajout d'un effet au survol */
+  .phoneContainer:hover {
+    background-color: #c8e6c9; /* Vert clair au survol */
+    border-color: #2e7d32; /* Bordure plus foncée au survol */
   }
   

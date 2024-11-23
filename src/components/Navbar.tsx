@@ -1,30 +1,41 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Player } from '@lottiefiles/react-lottie-player';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
+      {/* Logo à gauche */}
       <div className={styles.logo}>
-        {/* Logo à gauche */}
         <Link href="/">
           <Image
-            src="/image/logo.jpg" // Chemin vers le fichier logo.jpg
+            src="/image/logo.jpg" // Chemin vers votre logo
             alt="Logo"
-            width={80} // Largeur de l'image
-            height={80} // Hauteur de l'image
-            priority // Chargement prioritaire pour le logo
-            
+            width={80}
+            height={80}
+            priority
           />
         </Link>
       </div>
+
+      {/* Contenu avec animation et numéro de téléphone */}
       <div className={styles.navContent}>
-        {/* Numéro de téléphone au-dessus des liens */}
         <div className={styles.phoneContainer}>
-          📞 <span className={styles.phoneNumber}>+33 6 12 34 56 78</span>
+          {/* Animation Lottie */}
+          <Player
+            autoplay
+            loop
+            src="/animations/animation.json" // Chemin correct pour le fichier JSON
+            style={{ height: '40px', width: '40px' }} // Taille de l'animation
+          />
+          <span className={styles.phoneNumber}>+33 6 12 34 56 78</span>
         </div>
+
+        {/* Liens de navigation */}
         <ul className={styles.navLinks}>
           <li>
             <Link href="/" className={styles.navLink}>
