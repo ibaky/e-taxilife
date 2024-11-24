@@ -1,12 +1,7 @@
 /* Conteneur de l'image */
 
 /* Conteneur de l'image */
-.imageContainer {
-    width: 100%; /* L'image prend toute la largeur */
-    height: 700px; /* La hauteur est calculée automatiquement */
-    overflow: hidden; /* Coupe les débordements éventuels */
-  }
-  
+
   /* Aucun autre style n'est nécessaire ici */
   
   
@@ -21,4 +16,27 @@
     height: auto; /* Conserve les proportions */
     display: block; /* Supprime les espaces autour de l'image */
   }
+  /* Conteneur de l'image */
+.imageContainer {
+    width: 100%;
+    height: 700px;
+    position: relative; /* Nécessaire pour positionner le texte */
+    overflow: hidden;
+  }
+  
+  /* Texte centré au milieu de l'image */
+  .centeredText {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste pour un alignement parfait */
+    color: white; /* Couleur du texte */
+    font-size: 32px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Aligne le texte */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    padding: 10px 20px; /* Espacement autour du texte */
+    border-radius: 8px; /* Coins arrondis */
+  }
+  
   
