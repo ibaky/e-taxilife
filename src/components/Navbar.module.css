@@ -91,4 +91,20 @@
     background-color: #c8e6c9; /* Vert clair au survol */
     border-color: #2e7d32; /* Bordure plus foncée au survol */
   }
-  
+ /* Titre centré */
+.navTitle {
+  font-size: 45px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Départ invisible */
+  transform: translateY(-20px); /* Légèrement déplacé en haut */
+  transition: transform 1s ease, opacity 1s ease; /* Ajoute une transition si nécessaire */
+}
+.green {
+  color: #24f109;
+}
