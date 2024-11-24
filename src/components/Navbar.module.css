@@ -20,6 +20,7 @@
   .logo img {
     border-radius: 50%; /* Rendre l'image circulaire */
     display: block; /* Assure un bon rendu */
+    border: #24f109 solid 2px;
   }
   
   /* Liste des liens */
