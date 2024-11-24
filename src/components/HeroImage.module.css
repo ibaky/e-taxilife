@@ -1,0 +1,24 @@
+/* Conteneur de l'image */
+
+/* Conteneur de l'image */
+.imageContainer {
+    width: 100%; /* L'image prend toute la largeur */
+    height: 700px; /* La hauteur est calculée automatiquement */
+    overflow: hidden; /* Coupe les débordements éventuels */
+  }
+  
+  /* Aucun autre style n'est nécessaire ici */
+  
+  
+  
+  /* L'image est stylée directement par Next.js, pas besoin de style supplémentaire */
+  
+  
+  /* Style de l'image */
+  .imageContainer img {
+    object-fit: contain; /* Affiche toute l'image sans la couper */
+    width: 100%; /* Ajuste l'image à la largeur du conteneur */
+    height: auto; /* Conserve les proportions */
+    display: block; /* Supprime les espaces autour de l'image */
+  }
+  
