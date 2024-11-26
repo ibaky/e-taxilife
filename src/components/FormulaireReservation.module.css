@@ -22,22 +22,36 @@
     filter: grayscale(100%); /* Met l'image en noir et blanc */
   }
   
-  /* Conteneur du formulaire (vide) */
+  /* Conteneur du formulaire */
   .formContainer {
     position: absolute;
     top: -100px;  /* Décale le formulaire de 100px vers le haut (pour le chevauchement) */
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);  /* Centre horizontalement */
     width: 50%;  /* Largeur du conteneur */
     height: 800px;  /* Hauteur du conteneur */
     background-color: rgba(128, 128, 128, 0.5);  /* Gris transparent */
     display: flex;  /* Utilisation de flexbox pour centrer */
     justify-content: center;  /* Centre horizontalement */
-    align-items: flex-start;  /* Aligne le contenu en haut du conteneur */
+    align-items: center;  /* Centre verticalement */
     z-index: 1;  /* Le conteneur se place au-dessus de l'image */
     margin: 0 auto;  /* Assure que le conteneur est centré */
     border-radius: 25px;
     padding-top: 20px;  /* Espacement pour que le texte soit un peu plus bas */
+  }
+  
+  /* Conteneur enfant dans le formulaire */
+  .childContainer {
+    width: 80%;  /* Largeur de l'enfant par rapport au conteneur parent */
+    height: 80%;  /* Hauteur du conteneur enfant */
+    background-color: rgba(255, 255, 255, 0.8);  /* Fond blanc transparent */
+    display: flex;
+    flex-direction: column;  /* Aligner les éléments du formulaire verticalement */
+    justify-content: flex-start;  /* Aligne le contenu en haut du conteneur */
+    align-items: center;  /* Centre horizontalement */
+    border-radius: 10px;  /* Coins arrondis */
+    padding: 20px;
+    box-sizing: border-box;
   }
   
   /* Titre du formulaire - visible sans flou */
@@ -50,6 +64,6 @@
     z-index: 2;  /* Assure que le titre soit au-dessus du flou */
     filter: none;  /* Supprime le flou du titre */
     transform: scaleY(1.2);  /* Augmente la hauteur des lettres */
-    margin-top: 80px;
+    margin-top: 0; /* Assure que le titre est bien aligné en haut */
   }
   

@@ -12,10 +12,14 @@ const FormulaireReservation: React.FC = () => {
 
       {/* Conteneur du formulaire */}
       <div className={styles.formContainer}>
-        {/* Titre du formulaire avec un saut de ligne */}
-        <h2 className={styles.formTitle}>
-          Formulaire de <br /> réservation
-        </h2>
+        {/* Conteneur enfant contenant le formulaire */}
+        <div className={styles.childContainer}>
+          {/* Titre du formulaire placé dans le conteneur enfant */}
+          <h2 className={styles.formTitle}>
+            Formulaire de <br /> réservation
+          </h2>
+          {/* Contenu du formulaire (vide pour l'instant) */}
+        </div>
       </div>
     </div>
   );
