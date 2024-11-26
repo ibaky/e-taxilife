@@ -19,7 +19,7 @@ const HeroImage: React.FC = () => {
 
       {/* Texte au centre */}
       <div className={styles.centeredText}>
-        Disponible 24h/7j
+        Disponible 24h/24-7j/7
       </div>
     </div>
   );
