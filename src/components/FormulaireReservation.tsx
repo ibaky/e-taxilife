@@ -55,12 +55,12 @@ const FormulaireReservation: React.FC = () => {
             <label htmlFor="agreement">
               En soumettant ce formulaire, j’accepte que les informations saisies soient traitées par  
               <span className={styles.highlight}> E-taxilife-rouen metropole</span> dans le cadre de ma demande de contact 
-              et de la relation commerciale qui peut en découler. En savoir plus en consultant notre 
-              <span className={styles.highlightLink}>politique de confidentialité</span>.
+              et de la relation commerciale qui peut en découler.  <span className={styles.highlightLink}> En savoir plus en consultant notre 
+            politique de confidentialité</span>.
             </label>
           </div>
             {/* Bouton "Envoyer" */}
-            <button className={styles.submitButton}>Envoyer</button>
+          <button className={styles.submitButton}>Envoyer</button>
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@
   /* Conteneur du formulaire */
   .formContainer {
     position: absolute;
-    top: -80px;  /* Décale le formulaire de 100px vers le haut (pour le chevauchement) */
+    top: -100px;  /* Décale le formulaire de 100px vers le haut (pour le chevauchement) */
     left: 50%;
     transform: translateX(-50%);  /* Centre horizontalement */
     width: 50%;  /* Largeur du conteneur */
