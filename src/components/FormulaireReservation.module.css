@@ -1,0 +1,22 @@
+/* Conteneur principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* Prend toute la hauteur de la vue */
+  }
+  
+  /* Conteneur pour l'image */
+  .imageContainer {
+    width: 100%;
+    height: 750px; /* Hauteur de l'image */
+    position: relative;
+  }
+  
+  /* Style de l'image */
+  .image {
+    width: 100%;
+    height: 90%;
+    filter: grayscale(100%);  /* Ajoutez un point-virgule ici */
+  }
+  

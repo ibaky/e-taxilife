@@ -1,5 +1,6 @@
 /* Style de la Navbar */
 .navbar {
+  position: fixed;
     display: flex;
     justify-content: space-between; /* Espace entre le logo et les liens */
     align-items: center;
@@ -8,8 +9,8 @@
     padding: 0 2rem; /* Espacement horizontal */
     color: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet */
-    position: relative; /* S'assure que la navbar reste dans le flux normal */
-    z-index: 10; /* Met la navbar au-dessus des autres éléments */
+    
+    z-index: 1000; /* Met la navbar au-dessus des autres éléments */
     width: 100%; /* Prend toute la largeur */
   }
   
