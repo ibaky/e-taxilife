@@ -1,13 +1,33 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Player } from '@lottiefiles/react-lottie-player';
 import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
   const titleRef = useRef<HTMLDivElement>(null); // Référence pour le titre
+
+  // Fonction pour détecter le défilement
+  const handleScroll = () => {
+    if (window.scrollY > 1) {  // Si l'utilisateur défile de plus de 50px
+      setScrolled(true);  // Applique une classe "scrolled"
+    } else {
+      setScrolled(false);  // Si l'utilisateur est en haut de la page
+    }
+  };
+
+  // Écouter l'événement de défilement
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    // Nettoyage de l'événement lors de la suppression du composant
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const element = titleRef.current;
@@ -30,7 +50,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       {/* Logo à gauche */}
       <div className={styles.logo}>
         <Link href="/">
@@ -46,9 +66,8 @@ const Navbar: React.FC = () => {
 
       {/* Titre e-TaxiLife avec référence */}
       <div ref={titleRef} className={styles.navTitle}>
-  <span className={styles.green}>E</span> -TaxiLife
-</div>
-
+        <span className={styles.green}>E</span> -TaxiLife
+      </div>
 
       {/* Contenu des liens et du numéro de téléphone */}
       <div className={styles.navContent}>

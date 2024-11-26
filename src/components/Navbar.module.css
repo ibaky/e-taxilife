@@ -13,6 +13,10 @@
     z-index: 1000; /* Met la navbar au-dessus des autres éléments */
     width: 100%; /* Prend toute la largeur */
   }
+  .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);  /* Changez cette valeur pour ajuster la couleur du fond */
+    /* Exemple : couleur noire semi-transparente */
+  }
   
   /* Logo */
   .logo {
