@@ -25,7 +25,7 @@
   /* Conteneur du formulaire */
   .formContainer {
     position: absolute;
-    top: -100px;  /* Décale le formulaire de 100px vers le haut (pour le chevauchement) */
+    top: -80px;  /* Décale le formulaire de 100px vers le haut (pour le chevauchement) */
     left: 50%;
     transform: translateX(-50%);  /* Centre horizontalement */
     width: 50%;  /* Largeur du conteneur */
@@ -65,5 +65,112 @@
     filter: none;  /* Supprime le flou du titre */
     transform: scaleY(1.2);  /* Augmente la hauteur des lettres */
     margin-top: 0; /* Assure que le titre est bien aligné en haut */
+  }
+  
+  /* Texte sous le formulaire - Les champs obligatoires */
+  .requiredText {
+    font-size: 16px;
+    color: rgb(5, 5, 5);
+    text-align: left;  /* Aligne le texte à gauche */
+    width: 100%;
+    margin-top: 10px;  /* Espacement entre le titre et le texte */
+    padding-left: 20px;  /* Aligne le texte avec un peu de marge à gauche */
+  }
+  
+  /* Style des champs (Nom, Prénom, Téléphone, Adresse de départ, Adresse de destination, Nombre de passagers) */
+ /* Style des champs (Nom, Prénom, Téléphone, Adresse de départ, Adresse de destination, Nombre de passagers) */
+.inputContainer {
+    display: flex;  /* Aligne les champs côte à côte */
+    justify-content: space-between;  /* Crée un espace entre les champs */
+    width: 100%;  /* Prend toute la largeur du conteneur */
+    margin-top: 20px;  /* Espacement entre les autres éléments et les champs */
+  }
+  
+  .inputField {
+    width: 48%;  /* Chaque champ prend 48% de la largeur, donc 2 champs côte à côte */
+    height: 35px;  /* Hauteur du champ */
+    border: none;  /* Supprime la bordure classique */
+    border-bottom: 1px solid #000;  /* Bordure inférieure noire très fine */
+    background-color: #fff;  /* Fond blanc */
+    border-radius: 0;  /* Pas de coins arrondis pour les champs */
+    padding: 5px;  /* Espacement interne */
+    box-sizing: border-box;
+    color: rgb(5, 5, 5);  /* Couleur du texte noire */
+  }
+  
+  /* Conteneur des champs Nombre de bagages et Heures */
+  .inputContainer2 {
+    display: flex;  /* Aligne les champs côte à côte */
+    justify-content: space-between;  /* Crée un espace entre les champs */
+    width: 100%;  /* Prend toute la largeur du conteneur */
+    margin-top: 20px;  /* Espacement entre les autres éléments et les champs */
+  }
+  
+  /* Style spécifique pour le champ Date de prise en charge */
+  .inputFieldFullWidth {
+    width: 100%;  /* Prend toute la largeur du conteneur */
+    height: 35px;  /* Hauteur du champ */
+    border: none;  /* Supprime la bordure classique */
+    border-bottom: 1px solid #000;  /* Bordure inférieure noire très fine */
+    background-color: #fff;  /* Fond blanc */
+    border-radius: 0;  /* Pas de coins arrondis pour le champ */
+    padding: 5px;  /* Espacement interne */
+    box-sizing: border-box;
+    color: rgb(5, 5, 5);  /* Couleur du texte noire */
+  }
+  /* Style de la case à cocher et du texte */
+/* Conteneur de la case à cocher et texte */
+/* Conteneur de la case à cocher et texte */
+/* Conteneur de la case à cocher et texte */
+.checkboxContainer {
+    display: flex;
+    align-items: center;  /* Aligne la case à cocher et le texte horizontalement */
+    margin-top: 20px;  /* Espacement entre le champ Date et la case à cocher */
+  }
+  
+  /* Style de la case à cocher */
+  .checkboxContainer input[type="checkbox"] {
+    margin-right: 10px;  /* Espacement entre la case à cocher et le texte */
+  }
+  
+  /* Style du texte et de la case à cocher */
+  .checkboxContainer label {
+    font-size: 16px;  /* Taille du texte par défaut */
+    color: rgb(5, 5, 5);  /* Couleur du texte */
+    line-height: 1.5;  /* Espacement entre les lignes de texte */
+    width: 100%;
+  }
+  
+  /* Met en gras et augmente la taille du texte pour "E-taxilife-rouen metropole" */
+  .checkboxContainer .highlight {
+    font-weight: bold;  /* Met en gras */
+    font-size: 18px;  /* Légèrement plus gros */
+  }
+  
+  /* Applique un soulignement et une couleur noire à "En savoir plus en consultant notre politique de confidentialité" */
+  .checkboxContainer .highlightLink {
+    text-decoration: underline;
+    color: black;  /* Couleur noire */
+    cursor: pointer;  /* Ajoute un effet de pointeur au survol pour simuler un lien */
+  }
+  /* Style du bouton "Envoyer" */
+.submitButton {
+    background-color: #24f109; /* Fond vert */
+    color: white;  /* Texte en blanc */
+    font-size: 16px;  /* Taille du texte */
+    font-weight: bold;  /* Texte en gras */
+    padding: 10px 20px;  /* Espacement interne (haut-bas, gauche-droite) */
+    border: none;  /* Supprime la bordure */
+    border-radius: 5px;  /* Coins arrondis */
+    cursor: pointer;  /* Curseur en forme de main pour indiquer que c'est cliquable */
+    width: 100%;  /* Prend toute la largeur du parent */
+    max-width: 100px;  /* Limite la largeur à 400px */
+    margin-top: 20px;  /* Espacement entre le bouton et les autres éléments */
+    transition: background-color 0.3s ease;  /* Animation pour un effet de survol */
+  }
+  
+  /* Style au survol du bouton */
+  .submitButton:hover {
+    background-color: #1e8e06;  /* Changement de couleur au survol (vert plus foncé) */
   }
   
