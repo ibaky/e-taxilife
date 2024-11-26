@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;  /* Prend toute la hauteur de la vue */
+    position: relative;
   }
   
   /* Conteneur pour l'image */
@@ -16,7 +17,39 @@
   /* Style de l'image */
   .image {
     width: 100%;
-    height: 90%;
-    filter: grayscale(100%);  /* Ajoutez un point-virgule ici */
+    height: 100%;
+    object-fit: cover; /* Permet à l'image de couvrir toute la zone sans distorsion */
+    filter: grayscale(100%); /* Met l'image en noir et blanc */
+  }
+  
+  /* Conteneur du formulaire (vide) */
+  .formContainer {
+    position: absolute;
+    top: -100px;  /* Décale le formulaire de 100px vers le haut (pour le chevauchement) */
+    left: 0;
+    right: 0;
+    width: 50%;  /* Largeur du conteneur */
+    height: 800px;  /* Hauteur du conteneur */
+    background-color: rgba(128, 128, 128, 0.5);  /* Gris transparent */
+    display: flex;  /* Utilisation de flexbox pour centrer */
+    justify-content: center;  /* Centre horizontalement */
+    align-items: flex-start;  /* Aligne le contenu en haut du conteneur */
+    z-index: 1;  /* Le conteneur se place au-dessus de l'image */
+    margin: 0 auto;  /* Assure que le conteneur est centré */
+    border-radius: 25px;
+    padding-top: 20px;  /* Espacement pour que le texte soit un peu plus bas */
+  }
+  
+  /* Titre du formulaire - visible sans flou */
+  .formTitle {
+    font-size: 44px ;
+    font-weight: 800;
+    color: rgb(5, 5, 5);
+    text-align: center;  /* Centre le texte horizontalement */
+    margin-bottom: 20px;  /* Espace entre le titre et les autres éléments */
+    z-index: 2;  /* Assure que le titre soit au-dessus du flou */
+    filter: none;  /* Supprime le flou du titre */
+    transform: scaleY(1.2);  /* Augmente la hauteur des lettres */
+    margin-top: 80px;
   }
   

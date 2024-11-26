@@ -9,6 +9,14 @@ const FormulaireReservation: React.FC = () => {
       <div className={styles.imageContainer}>
         <img src="/image/reserves.jpg" alt="Image de fond" className={styles.image} />
       </div>
+
+      {/* Conteneur du formulaire */}
+      <div className={styles.formContainer}>
+        {/* Titre du formulaire avec un saut de ligne */}
+        <h2 className={styles.formTitle}>
+          Formulaire de <br /> réservation
+        </h2>
+      </div>
     </div>
   );
 };
