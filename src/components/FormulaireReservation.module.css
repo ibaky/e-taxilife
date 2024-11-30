@@ -155,6 +155,8 @@
   }
   /* Style du bouton "Envoyer" */
 .submitButton {
+  display: block;
+  margin: auto;
     background-color: #24f109; /* Fond vert */
     color: white;  /* Texte en blanc */
     font-size: 16px;  /* Taille du texte */
