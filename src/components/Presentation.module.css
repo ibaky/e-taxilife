@@ -31,8 +31,7 @@
   }
   
   /* Container individuel avec bordure */
- /* Container individuel avec bordure */
-.container1, .container3 {
+  .container1, .container3 {
     display: flex;
     flex-direction: column; /* Alignement vertical du contenu du container */
     justify-content: flex-start; /* Centrer verticalement le contenu */
@@ -52,8 +51,7 @@
   
   /* Appliquer une hauteur plus grande pour le container 2 */
   .container2 {
-    height: 520px; /* Légèrement plus long que les autres containers */
-    height: 720px;
+    height: 720px; /* Légèrement plus long que les autres containers */
   }
   
   /* L'image prend toute la largeur du container et commence en haut */
@@ -65,7 +63,7 @@
     top: 0;
     left: 0;
   
-    transition: filter 0.3s ease; /* Animation douce pour le filtre */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Animation douce pour le filtre et l'agrandissement */
   }
   
   /* Appliquer un filtre noir (réduit la luminosité de l'image) lorsqu'on survole le container */
@@ -73,9 +71,8 @@
   .container2:hover .containerImage,
   .container3:hover .containerImage {
     filter: brightness(50%); /* Filtre noir en réduisant la luminosité de l'image */
+    transform: scale(1.04); /* Effet zoom: Agrandissement de l'image de 10% */
   }
-  
-
   
   /* Texte "Transport Privée" ajouté en dessous de l'image */
   .transportText {
@@ -88,6 +85,7 @@
     color: rgb(0, 0, 0); /* Couleur du texte en blanc */
   }
   
+  /* Texte en bas du container */
   .containerText {
     position: absolute;
     bottom: 0;
