@@ -1,0 +1,20 @@
+/* src/components/Garentie.module.css */
+.garentie {
+    margin-top: 0; /* Assurez-vous qu'il n'y a pas de marge supérieure */
+    padding-top: 0;
+  }
+.garentieSection {
+    background-color:gray ;
+    width: 100%; /* Prend toute la largeur */
+    height: 500px; /* Hauteur de la section */
+    display: flex;
+    justify-content: center; /* Centrer le container */
+    align-items: center; /* Centrer le container verticalement */
+  }
+  
+  .container {
+    width: 100%; /* Largeur du container, peut être ajustée */
+    height: 100%; /* Hauteur du container égale à la section */
+    background-color: #24f109; /* Fond vert pour le container */
+  }
+  

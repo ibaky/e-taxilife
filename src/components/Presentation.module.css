@@ -7,7 +7,7 @@
     align-items: center; /* Centrer les éléments horizontalement */
     gap: 20px; /* Espace entre le titre et les containers */
     margin-bottom: 20px; /* Espacement sous les containers */
-    background: linear-gradient(to bottom, #000000, #595959);
+  
   }
   
   /* Titre de la section avec bordure */

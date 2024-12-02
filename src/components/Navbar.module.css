@@ -35,7 +35,7 @@
 .navLinks {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
   margin-left: auto; /* Pousse les liens à droite */
@@ -49,7 +49,7 @@
   position: relative; /* Nécessaire pour placer l'animation */
   padding-bottom: 5px; /* Espace pour l'animation */
   transition: color 0.3s ease;
-  font-size: 25px;
+  font-size: 19px;
 }
 
 /* Barre animée sous les liens */
@@ -83,7 +83,7 @@
   border-radius: 8px; /* Coins arrondis */
   background-color: #e8f5e9; /* Fond vert clair */
   width: 250px;
-  margin-left: 250px;
+  margin-left: 750px;
 }
 
 /* Style du numéro de téléphone */

@@ -82,29 +82,19 @@ const Navbar: React.FC = () => {
         </div>
         <ul className={styles.navLinks}>
           <li>
-            <Link href="/" className={styles.navLink}>
-              Accueil
-            </Link>
+            <Link href="/transport-privee" className={styles.navLink}>Transport Privée</Link> {/* Lien pour Transport Privée */}
           </li>
           <li>
-            <Link href="/apropos" className={styles.navLink}>
-              À propos
-            </Link>
+            <Link href="/trajet-longue-distance" className={styles.navLink}>Trajet longue distance</Link> {/* Lien pour Trajet longue distance */}
           </li>
           <li>
-            <Link href="/contact" className={styles.navLink}>
-              Contact
-            </Link>
+            <Link href="/transport-hospitalier" className={styles.navLink}>Transport hospitalier</Link> {/* Lien pour Transport hospitalier */}
           </li>
           <li>
-            <Link href="/premium" className={styles.navLink}>
-              Premium
-            </Link>
+            <Link href="/transport-de-colis" className={styles.navLink}>Transport de colis</Link> {/* Lien pour Transport de colis */}
           </li>
           <li>
-            <Link href="/visite" className={styles.navLink}>
-              Visite
-            </Link>
+            <Link href="/taxi-pour-evenement" className={styles.navLink}>Taxi pour événement</Link> {/* Lien pour Taxi pour événement */}
           </li>
         </ul>
       </div>
