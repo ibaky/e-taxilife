@@ -20,21 +20,39 @@
   }
   .garantieContainer {
     position: relative;
-    height: 400px; /* Hauteur de la section */
-    width: 100%; /* Largeur de la section (prendra toute la largeur disponible) */
-    overflow: hidden; /* Cache tout dépassement d'image */
-    background: url('/image/stop.jpg') no-repeat center center;
-    background-size: cover; /* L'image de fond occupe toute la section */
+    height: 450px;
+    width: 100%;
+    background-color: #f4f4f4;
+    overflow: hidden;
   }
   
-  .garentieImage {
-    position: absolute; /* Positionner l'image à l'intérieur de la section */
-    top: 0;
-    left: 0;
-    width: 100%; /* L'image occupe toute la largeur du conteneur */
-    height: 100%; /* L'image occupe toute la hauteur du conteneur */
-    object-fit: cover; /* Remplir l'espace tout en gardant les proportions */
-    filter: grayscale(100%) blur(5px); /* Applique un filtre gris et flou à l'image */
+  .garantieEnfant {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: flex-start; /* Permet d'aligner tout à gauche */
+    align-items: center; /* Centrer verticalement le contenu */
+    overflow: hidden;
+    background-color: rgba(169, 169, 169, 0.5);
+    backdrop-filter: blur(2px);
+    border-radius: 25px;
   }
   
+  .garantieText {
+    font-size: 3.0rem;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    margin-right: 20px; /* Espace entre le texte et l'animation */
+    margin: 20px;
+    margin-right: 80px;
+  }
+  
+  .animationContainer {
+    /* L'animation sera à droite du texte grâce à la structure flex */
+  }
   
