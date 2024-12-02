@@ -9,11 +9,17 @@ interface ContainerProps {
 }
 
 const Presentation: React.FC = () => {
-  // Données fictives pour les containers
+  // Données pour les containers 1, 2, 3
   const containersData = [
     { title: "Transport Privée", content: "Contenu pour le premier container.", imageUrl: "/image/TaxiPrivee.jpg" },
-    { title: "Trajet longue distance", content: "Contenu pour le deuxième container.", imageUrl: "/image/trajet.jpg" },
-    { title: "Transport hospitalier", content: "Contenu pour le troisième container.", imageUrl: "/image/Patient.jpeg" },  // Ajout du troisième container
+    { title: "Trajet longue distance", content: "Contenu pour le deuxième container.", imageUrl: "/image/reserve.jpg" },
+    { title: "Transport hospitalier", content: "Contenu pour le troisième container.", imageUrl: "/image/handicape.jpg" },  // Ajout du troisième container
+  ];
+
+  // Données pour les containers 4 et 5
+  const additionalContainersData = [
+    { title: "Transport de colis", content: "Contenu pour le quatrième container.", imageUrl: "/image/colis.jpeg" },
+    { title: "Taxi pour evenement", content: "Contenu pour le cinquième container.", imageUrl: "/image/taxiMercedes.jpg" },
   ];
 
   // Composant Container
@@ -24,21 +30,9 @@ const Presentation: React.FC = () => {
         {imageUrl && <img src={imageUrl} alt={title} className={styles.containerImage} />}
         
         {/* Afficher le texte sous l'image dans la zone verte */}
-        {title === "Transport Privée" && (
-          <div className={styles.transportText}>
-            {title}
-          </div>
-        )}
-        {title === "Trajet longue distance" && (
-          <div className={styles.transportText}>
-            {title}
-          </div>
-        )}
-        {title === "Transport hospitalier" && (
-          <div className={styles.transportText}>
-            {title}
-          </div>
-        )}
+        <div className={styles.transportText}>
+          {title}
+        </div>
         
         {/* Contenu du container */}
         <p>{content}</p>
@@ -63,10 +57,16 @@ const Presentation: React.FC = () => {
         ))}
       </div>
 
-      {/* Container 4, sur une nouvelle ligne */}
-      <div className={`${styles.container} ${styles.container4}`}>
-        <h3>Container 4</h3>
-        <p>Contenu pour le quatrième container.</p>
+      {/* Wrapper pour les containers 4 et 5, sur une nouvelle ligne */}
+      <div className={styles.containerWrapper2}>
+        {additionalContainersData.map((container, index) => (
+          <Container
+            key={index}
+            title={container.title}
+            content={container.content}
+            imageUrl={container.imageUrl}
+          />
+        ))}
       </div>
     </section>
   );

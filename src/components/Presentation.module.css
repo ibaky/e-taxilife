@@ -53,6 +53,23 @@
   .container2 {
     height: 720px; /* Légèrement plus long que les autres containers */
   }
+  /* Wrapper pour les containers 4 et 5 */
+.containerWrapper2 {
+  display: flex;
+  justify-content: space-between; /* Espace entre les containers */
+  width: 100%; /* Les containers prennent toute la largeur disponible */
+  gap: 50px; /* Espace entre les containers */
+  
+}
+/* Pour containers 4 et 5, ajuster la hauteur */
+
+
+
+/* Pour containers 4 et 5, ajuster la largeur pour qu'ils prennent 50% de la ligne */
+.container1 {
+  width: 48%; /* Largeur ajustée pour les containers de la deuxième ligne */
+}
+
   
   /* L'image prend toute la largeur du container et commence en haut */
   .containerImage {
