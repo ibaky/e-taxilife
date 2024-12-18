@@ -12,9 +12,7 @@ const FooterComponent: React.FC = () => {
             <FooterLink href="#">+33 6 12 34 56 78</FooterLink>
             <FooterLink href="#">contact@montransport.com</FooterLink>
             <FooterLink href="#">rue maltilde 76000 rouen  </FooterLink>
-            <FooterLink href="#">Partners</FooterLink>
-            <FooterLink href="#">Blog</FooterLink>
-            <FooterLink href="#">Next.js Conf</FooterLink>
+      
           </div>
         </FooterGroup>
 
@@ -32,21 +30,17 @@ const FooterComponent: React.FC = () => {
         </FooterGroup>
 
         {/* Groupe "Education" */}
-        <FooterGroup title="Education" className={styles.footerGroup}>
+        <FooterGroup title="conditions" className={styles.footerGroup}>
           <div className={styles.footerLinks}>
-            <FooterLink href="#">Documentation</FooterLink>
+            <FooterLink href="#">Conditions Générales</FooterLink>
             <FooterLink href="#">Guides</FooterLink>
             <FooterLink href="#">Support</FooterLink>
+            <FooterLink href="#">Politique de Confidentialité</FooterLink>
+            <FooterLink href="#">Politique de Confidentialité</FooterLink>
           </div>
         </FooterGroup>
 
-        {/* Groupe "More" */}
-        <FooterGroup title="More" className={styles.footerGroup}>
-          <div className={styles.footerLinks}>
-            <FooterLink href="#">Open Source Software</FooterLink>
-            <FooterLink href="#">Design System</FooterLink>
-          </div>
-        </FooterGroup>
+      
       </Footer>
 
       {/* Footer Bottom */}
