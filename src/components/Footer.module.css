@@ -1,4 +1,5 @@
 /* footer.module.css */
+
 .footerContainer {
   background-color: #000000 !important;
   padding: 40px 20px !important;
@@ -6,7 +7,6 @@
   font-family: 'Roboto', sans-serif !important;
   margin-top: 20px !important;
   font-weight: bold;  /* Met le texte en gras */
-  
 }
 
 .footerGroup {
@@ -21,13 +21,13 @@
   font-size: 1.5rem !important;
   font-weight: bold !important;
   margin-bottom: 10px !important;
-  font-weight: bold !important;  /* Met le texte en gras */
 }
 
 .footerLinks {
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: column !important; /* Lien et animation en colonne */
   gap: 8px !important;
+  align-items: flex-start !important; /* Alignement à gauche */
 }
 
 .footerLinks a {
@@ -35,12 +35,22 @@
   color: #ffffff !important; /* Définit la couleur des liens en blanc */
   font-size: 1rem !important;
   transition: color 0.3s !important;
+  display: flex !important; /* Utiliser flex pour aligner l'animation et le texte */
+  align-items: center !important; /* Centrer verticalement l'animation et le texte */
 }
 
 .footerLinks a:hover {
   color: #7ed957 !important; /* Couleur verte pour l'effet hover */
 }
 
+/* Réorganiser le CSS pour que l'animation soit à gauche du texte */
+.iconWithText {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important; /* Ajoute un espace entre l'icône et le texte */
+}
+
+/* Footer Bottom */
 .footerBottom {
   text-align: center !important;
   font-size: 0.9rem !important;
@@ -51,7 +61,7 @@
 .footerBottom a {
   color: #7ed957 !important;
   text-decoration: none !important;
-  font-weight: bold ;  /* Met le texte en gras */
+  font-weight: bold !important; /* Met le texte en gras */
 }
 
 .footerBottom a:hover {
@@ -71,5 +81,6 @@
 
   .footerLinks {
     margin-bottom: 15px !important;
+    flex-direction: column !important; /* Change de ligne à colonne pour la version mobile */
   }
 }
