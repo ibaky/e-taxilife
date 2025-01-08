@@ -116,6 +116,15 @@
     font-size: 1rem;
     z-index: 1; /* Le texte est au-dessus de l'image */
   }
+  /* Classe pour encapsuler le lien sans affecter le design */
+.linkWrapper {
+  display: block; /* Assure que le lien englobe tout */
+  text-decoration: none; /* Supprime les soulignements */
+  color: inherit; /* Hérite des couleurs définies par le parent */
+  width: 100%; /* Le lien occupe toute la largeur */
+  height: 100%; /* Le lien occupe toute la hauteur */
+}
+
   
   @media (max-width: 768px) {
     .containerWrapper {
