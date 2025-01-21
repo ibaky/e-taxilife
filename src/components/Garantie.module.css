@@ -6,6 +6,24 @@
   overflow: hidden;
 }
 
+/* Classe pour l'animation */
+.animated {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInGarantie 1.5s ease-out forwards;
+}
+
+@keyframes slideInGarantie {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .garantieEnfant {
   position: absolute;
   top: 50%;
@@ -38,10 +56,9 @@
   align-items: center;
   gap: 5px;
   width: 100%;
-  padding-right: 220px; /* Espace ajusté */
+  padding-right: 220px;
 }
 
-/* L'animation et le texte seront affichés sur la même ligne */
 .textNextToAnimation {
   font-size: 2rem;
   font-weight: bold;
@@ -50,9 +67,16 @@
 }
 
 .animationStandardContainer {
-  margin-top: 20px; /* Ajout d'un peu d'espace entre cette animation et la précédente */
+  margin-top: 20px;
 }
 
 .animationTextContainer {
-  margin : 30px;
+  margin: 30px;
+}
+
+/* Image de fond */
+.garentieImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
