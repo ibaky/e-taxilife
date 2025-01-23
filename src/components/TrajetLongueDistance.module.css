@@ -1,69 +1,158 @@
-.curtainImage {
-  position: relative;
+/* Sections principales */
+.mainSection, .tarifSection, .additionalSection {
+  width: 100%;
+  margin: 4rem 0;
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mainSection:hover, .tarifSection:hover, .additionalSection:hover {
+  transform: translateY(-5px);
+}
+
+/* Style différent pour chaque section */
+.firstSection {
+  height: 800px;
+  flex: 1;
   overflow: hidden;
-  width: 100%;
-  height: 650px;
 }
 
-.curtainImage::before {
-  content: "";
+.secondSection {
+  height: 1000px;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.secondSection::after {
+  content: '';
   position: absolute;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 200%;
-  background-color: #000000;
-  transform: translateY(100%);
-  animation: blockReveal 2s linear forwards; /* Durée ajustée à 2.2s */
+  right: 0;
+  bottom: 0;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  pointer-events: none;
+  border-radius: 8px;
 }
 
-@keyframes blockReveal {
-  from {
-    transform: translateY(50%);
-  }
-  to {
-    transform: translateY(-150%);
-  }
-}
-
+/* Images avec effet de zoom */
 .mainImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: left top;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
 }
 
-/* Animation pour la deuxième image */
-.secondImageContainer {
-  position: relative;
+.mainImage:hover {
+  transform: scale(1.02);
+}
+
+/* Images pour les autres sections */
+.additionalImage {
+  flex: 1;
+  max-height: 500px;
   overflow: hidden;
-  width: 100%;
-  height: 600px;
 }
 
-.secondImageContainer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  animation: horizontalReveal 2s linear forwards; /* Durée ajustée à 2.2s */
-}
-
-@keyframes horizontalReveal {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-.secondImage {
+.additionalImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.additionalImage:hover img {
+  transform: scale(1.02);
+}
+
+/* Contenu texte commun pour toutes les sections */
+.mainContent, .tarifContent, .additionalContent {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+/* Style des titres communs */
+.mainContent h1,
+.mainContent h2,
+.tarifContent h2,
+.additionalContent h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Style du texte principal commun */
+.mainContent p,
+.tarifContent p,
+.additionalContent p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Style des boutons */
+.enSavoirPlus {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #fff;
+  background-color: #28a745;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+.enSavoirPlus:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Numéro de téléphone */
+.phoneNumber {
+  color: #28a745;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mainSection,
+  .tarifSection,
+  .additionalSection {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .mainContent,
+  .tarifContent,
+  .additionalContent {
+    padding: 0 1rem;
+  }
+
+  .firstSection {
+    height: 400px;
+  }
+
+  .secondSection {
+    height: 500px;
+  }
+
+  .additionalImage {
+    max-height: 300px;
+    width: 100%;
+  }
 }
