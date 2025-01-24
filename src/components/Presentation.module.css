@@ -1,140 +1,146 @@
-/* src/components/Presentation.module.css */
-
-/* Conteneur principal avec flexbox */
+/* Presentation.module.css */
 .presentationContainer {
-    display: flex;
-    flex-direction: column; /* Organiser le titre et les containers de manière verticale */
-    align-items: center; /* Centrer les éléments horizontalement */
-    gap: 20px; /* Espace entre le titre et les containers */
-    margin-bottom: 20px; /* Espacement sous les containers */
-  
-  }
-  
-  /* Titre de la section avec bordure */
-  .title {
-    font-size: 2rem; /* Taille du texte */
-    font-weight: bold;
-    text-align: center; /* Centrer le titre */
-    margin-top: 20px; /* Un peu d'espace au-dessus */
-    margin-bottom: 20px; /* Un peu d'espace sous le titre */
-    color: #ffffff;
-    
-    padding: 10px; /* Un peu de padding pour que la bordure soit visible autour du texte */
-  }
-  
-  /* Wrapper pour les 3 premiers containers */
-  .containerWrapper {
-    display: flex; /* Utiliser Flexbox pour aligner les containers sur la même ligne */
-    justify-content: space-between; /* Ajouter de l'espace entre les containers */
-    width: 100%; /* Les containers prennent toute la largeur disponible */
-    gap: 5px; /* Espace entre les containers */
-  }
-  
-  /* Container individuel avec bordure */
-  .container1, .container3 {
-    display: flex;
-    flex-direction: column; /* Alignement vertical du contenu du container */
-    justify-content: flex-start; /* Centrer verticalement le contenu */
-    align-items: center; /* Centrer horizontalement le contenu */
-    background-color: #f4f4f4;
-    padding: 0; /* Enlever le padding pour l'image et laisser l'espace en bas */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    background-color: #24f109; /* Fond vert */
-    width: 30%; /* Largeur du container */
-    height: 500px; /* Hauteur totale du container */
-    position: relative; /* Nécessaire pour positionner correctement l'image */
-    overflow: hidden; /* Permet de cacher tout ce qui dépasse du container */
-    border: 1px solid black; /* Bordure noire autour du container */
-  }
-  
-  /* Appliquer une hauteur plus grande pour le container 2 */
-  .container2 {
-    height: 720px; /* Légèrement plus long que les autres containers */
-  }
-  /* Wrapper pour les containers 4 et 5 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.918) 0%, rgba(54, 54, 54, 0.6) 100%);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 25px 0;
+  color: #ffffff;
+  padding: 15px 30px;
+  border-bottom: 3px solid #24f109;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.containerWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  padding: 0 30px;
+}
+
+.container1, .container3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 0;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #24f109;
+  width: 32%;
+  height: 480px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #24f109;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container1:hover, .container3:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
 .containerWrapper2 {
   display: flex;
-  justify-content: space-between; /* Espace entre les containers */
-  width: 100%; /* Les containers prennent toute la largeur disponible */
-  gap: 50px; /* Espace entre les containers */
-  
-}
-/* Pour containers 4 et 5, ajuster la hauteur */
-
-
-
-/* Pour containers 4 et 5, ajuster la largeur pour qu'ils prennent 50% de la ligne */
-.container1 {
-  width: 48%; /* Largeur ajustée pour les containers de la deuxième ligne */
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+  padding: 0 30px;
 }
 
-  
-  /* L'image prend toute la largeur du container et commence en haut */
-  .containerImage {
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  
-    transition: filter 0.3s ease, transform 0.3s ease; /* Animation douce pour le filtre et l'agrandissement */
-  }
-  
-  /* Appliquer un filtre noir (réduit la luminosité de l'image) lorsqu'on survole le container */
-  .container1:hover .containerImage,
-  .container2:hover .containerImage,
-  .container3:hover .containerImage {
-    filter: brightness(50%); /* Filtre noir en réduisant la luminosité de l'image */
-    transform: scale(1.04); /* Effet zoom: Agrandissement de l'image de 10% */
-  }
-  
-  /* Texte "Transport Privée" ajouté en dessous de l'image */
-  .transportText {
-    position: absolute;
-    bottom: 50px; /* Positionner "Transport Privée" juste au-dessus du texte existant */
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0); /* Couleur du texte en blanc */
-  }
-  
-  /* Texte en bas du container */
-  .containerText {
-    position: absolute;
-    bottom: 0;
-    width: 100%; /* Le texte occupe toute la largeur du container */
-    height: 50px; /* Hauteur de la zone du texte */
-    background-color: #24f109; /* Fond vert */
-    color: white; /* Texte en blanc */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    z-index: 1; /* Le texte est au-dessus de l'image */
-  }
-  /* Classe pour encapsuler le lien sans affecter le design */
+.containerWrapper2 .container1 {
+  width: 48%;
+}
+
+.containerImage {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.container1:hover .containerImage,
+.container2:hover .containerImage,
+.container3:hover .containerImage {
+  filter: brightness(65%);
+  transform: scale(1.06);
+}
+
+.transportText {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  padding: 10px;
+  background: rgba(36, 241, 9, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.container1:hover .transportText {
+  transform: scale(1.05);
+}
+
+.containerText {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #24f109;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .linkWrapper {
-  display: block; /* Assure que le lien englobe tout */
-  text-decoration: none; /* Supprime les soulignements */
-  color: inherit; /* Hérite des couleurs définies par le parent */
-  width: 100%; /* Le lien occupe toute la largeur */
-  height: 100%; /* Le lien occupe toute la hauteur */
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-  
-  @media (max-width: 768px) {
-    .containerWrapper {
-      flex-direction: column; /* Sur les petits écrans, les containers deviennent des colonnes */
-      align-items: center; /* Centrer les containers */
-    }
-  
-    .container1, .container2, .container3 {
-      flex: 0 0 100%; /* Chaque container prend toute la largeur sur mobile */
-      height: auto; /* Hauteur ajustée automatiquement */
-    }
+@media (max-width: 768px) {
+  .containerWrapper {
+      flex-direction: column;
+      align-items: center;
   }
-  
+
+  .container1, .container2, .container3 {
+      width: 90%;
+      height: 450px;
+      margin-bottom: 20px;
+  }
+
+  .title {
+      font-size: 2rem;
+      padding: 10px 20px;
+  }
+}

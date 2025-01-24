@@ -1,7 +1,9 @@
+// FormulaireReservation.tsx
 'use client';
 
 import React, { useState } from 'react';
-import styles from './FormulaireReservation.module.css'; // Import du fichier CSS pour l'image
+import { useLanguage } from '../context/LanguageContext';
+import styles from './FormulaireReservation.module.css';
 
 interface Errors {
   name?: string;
@@ -16,6 +18,7 @@ interface Errors {
 }
 
 const FormulaireReservation: React.FC = () => {
+  const { translations } = useLanguage();
   const [name, setName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
@@ -25,27 +28,25 @@ const FormulaireReservation: React.FC = () => {
   const [luggage, setLuggage] = useState<string>('');
   const [date, setDate] = useState<string>('');
   const [agreement, setAgreement] = useState<boolean>(false);
-  const [errors, setErrors] = useState<Errors>({}); // Typage pour les erreurs
+  const [errors, setErrors] = useState<Errors>({});
 
-  // Validation des champs du formulaire
   const validateForm = (): boolean => {
     const errors: Errors = {};
-    if (!name) errors.name = 'Le nom est requis';
-    if (!lastName) errors.lastName = 'Le prénom est requis';
-    if (!phone) errors.phone = 'Le téléphone est requis';
-    if (!startAddress) errors.startAddress = 'L\'adresse de départ est requise';
-    if (!endAddress) errors.endAddress = 'L\'adresse de destination est requise';
-    if (!passengers) errors.passengers = 'Le nombre de passagers est requis';
-    if (!luggage) errors.luggage = 'Le nombre de bagages est requis';
-    if (!date) errors.date = 'La date de prise en charge est requise';
-    if (!agreement) errors.agreement = 'Vous devez accepter les termes et conditions';
+    if (!name) errors.name = translations.form.errors.name;
+    if (!lastName) errors.lastName = translations.form.errors.lastName;
+    if (!phone) errors.phone = translations.form.errors.phone;
+    if (!startAddress) errors.startAddress = translations.form.errors.startAddress;
+    if (!endAddress) errors.endAddress = translations.form.errors.endAddress;
+    if (!passengers) errors.passengers = translations.form.errors.passengers;
+    if (!luggage) errors.luggage = translations.form.errors.luggage;
+    if (!date) errors.date = translations.form.errors.date;
+    if (!agreement) errors.agreement = translations.form.errors.agreement;
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
-  // Fonction de soumission du formulaire
   const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Empêche l'envoi traditionnel du formulaire
+    e.preventDefault();
 
     if (validateForm()) {
       const data = { name, lastName, phone, startAddress, endAddress, passengers, luggage, date };
@@ -56,21 +57,21 @@ const FormulaireReservation: React.FC = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data), // Envoi des données en JSON
+          body: JSON.stringify(data),
         });
 
         const result = await response.json();
         if (response.ok) {
-          alert('Réservation enregistrée avec succès');
+          alert(translations.form.success);
         } else {
-          alert(result.message || 'Une erreur est survenue');
+          alert(result.message || translations.form.error);
         }
       } catch (error: unknown) {
         if (error instanceof Error) {
           console.error(error.message);
-          alert('Erreur de connexion au serveur');
+          alert(translations.form.serverError);
         } else {
-          alert('Une erreur inconnue est survenue');
+          alert(translations.form.unknownError);
         }
       }
     }
@@ -85,20 +86,19 @@ const FormulaireReservation: React.FC = () => {
       <div className={styles.formContainer}>
         <div className={styles.childContainer}>
           <h2 className={styles.formTitle}>
-            Formulaire de <br /> réservation
+            {translations.form.title}
           </h2>
 
           <p className={styles.requiredText}>
-            Les champs indiqués par un astérisque (*) sont obligatoires
+            {translations.form.requiredFields}
           </p>
 
-          {/* Le formulaire */}
-          <form onSubmit={submitForm}> {/* Lier la fonction submitForm ici */}
+          <form onSubmit={submitForm}>
             <div className={styles.inputContainer}>
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Nom*"
+                placeholder={`${translations.form.lastName}*`}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -106,7 +106,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Prénom*"
+                placeholder={`${translations.form.firstName}*`}
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
@@ -117,7 +117,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Téléphone*"
+                placeholder={`${translations.form.phone}*`}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
@@ -125,7 +125,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Adresse de départ*"
+                placeholder={`${translations.form.startAddress}*`}
                 value={startAddress}
                 onChange={(e) => setStartAddress(e.target.value)}
               />
@@ -136,7 +136,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Adresse de destination*"
+                placeholder={`${translations.form.endAddress}*`}
                 value={endAddress}
                 onChange={(e) => setEndAddress(e.target.value)}
               />
@@ -144,7 +144,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Nombre de passagers*"
+                placeholder={`${translations.form.passengers}*`}
                 value={passengers}
                 onChange={(e) => setPassengers(e.target.value)}
               />
@@ -155,7 +155,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Nombre de bagages*"
+                placeholder={`${translations.form.luggage}*`}
                 value={luggage}
                 onChange={(e) => setLuggage(e.target.value)}
               />
@@ -163,7 +163,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="Heures*"
+                placeholder={`${translations.form.hours}*`}
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
@@ -174,7 +174,7 @@ const FormulaireReservation: React.FC = () => {
               <input
                 type="date"
                 className={styles.inputFieldFullWidth}
-                placeholder="Date de prise en charge*"
+                placeholder={`${translations.form.date}*`}
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
@@ -189,16 +189,15 @@ const FormulaireReservation: React.FC = () => {
                 onChange={(e) => setAgreement(e.target.checked)}
               />
               <label htmlFor="agreement">
-                En soumettant ce formulaire, j’accepte que les informations saisies soient traitées par  
-                <span className={styles.highlight}> E-taxilife-rouen metropole</span> dans le cadre de ma demande de contact 
-                et de la relation commerciale qui peut en découler.  
-                <span className={styles.highlightLink}> En savoir plus en consultant notre politique de confidentialité</span>.
+                {translations.form.agreement}
+                <span className={styles.highlightLink}> {translations.form.policy}</span>
               </label>
               {errors.agreement && <span className={styles.error}>{errors.agreement}</span>}
             </div>
 
-            {/* Bouton de soumission */}
-            <button className={styles.submitButton} type="submit">Envoyer</button>
+            <button className={styles.submitButton} type="submit">
+              {translations.form.submitButton}
+            </button>
           </form>
         </div>
       </div>

@@ -4,102 +4,118 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Player } from '@lottiefiles/react-lottie-player';
+import { useLanguage } from '../context/LanguageContext';
 import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const titleRef = useRef<HTMLDivElement>(null); // Référence pour le titre
+ const [scrolled, setScrolled] = useState(false);
+ const titleRef = useRef<HTMLDivElement>(null);
+ const { language, setLanguage } = useLanguage();
 
-  // Fonction pour détecter le défilement
-  const handleScroll = () => {
-    if (window.scrollY > 1) {  // Si l'utilisateur défile de plus de 50px
-      setScrolled(true);  // Applique une classe "scrolled"
-    } else {
-      setScrolled(false);  // Si l'utilisateur est en haut de la page
-    }
-  };
+ const handleScroll = () => {
+   if (window.scrollY > 1) {
+     setScrolled(true);
+   } else {
+     setScrolled(false);
+   }
+ };
 
-  // Écouter l'événement de défilement
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+ useEffect(() => {
+   window.addEventListener('scroll', handleScroll);
+   return () => {
+     window.removeEventListener('scroll', handleScroll);
+   };
+ }, []);
 
-    // Nettoyage de l'événement lors de la suppression du composant
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+ useEffect(() => {
+   const element = titleRef.current;
+   if (element) {
+     let start: number | null = null;
+     const duration = 1000;
 
-  useEffect(() => {
-    const element = titleRef.current;
-    if (element) {
-      let start: number | null = null; // Déclare start avec un type explicite
-      const duration = 1000; // Durée de l'animation (ms)
+     const animate = (timestamp: number) => {
+       if (start === null) start = timestamp;
+       const progress = Math.min((timestamp - start) / duration, 1);
+       element.style.transform = `translateY(${(1 - progress) * -20}px)`;
+       element.style.opacity = `${progress}`;
+       if (progress < 1) {
+         requestAnimationFrame(animate);
+       }
+     };
 
-      const animate = (timestamp: number) => {
-        if (start === null) start = timestamp; // Initialise start lors de la première frame
-        const progress = Math.min((timestamp - start) / duration, 1); // Calcul du progrès (de 0 à 1)
-        element.style.transform = `translateY(${(1 - progress) * -20}px)`; // Déplace vers le bas
-        element.style.opacity = `${progress}`; // Augmente l'opacité
-        if (progress < 1) {
-          requestAnimationFrame(animate); // Continue l'animation
-        }
-      };
+     requestAnimationFrame(animate);
+   }
+ }, []);
 
-      requestAnimationFrame(animate); // Démarre l'animation
-    }
-  }, []);
+ return (
+   <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+     <div className={styles.logo}>
+       <Link href="/">
+         <Image src="/image/logo.jpg" alt="Logo" width={80} height={80} priority />
+       </Link>
+     </div>
 
-  return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-      {/* Logo à gauche */}
-      <div className={styles.logo}>
-        <Link href="/">
-          <Image
-            src="/image/logo.jpg"
-            alt="Logo"
-            width={80}
-            height={80}
-            priority
-          />
-        </Link>
-      </div>
+     <div ref={titleRef} className={styles.navTitle}>
+       <span className={styles.green}>E</span> -TaxiLife
+     </div>
 
-      {/* Titre e-TaxiLife avec référence */}
-      <div ref={titleRef} className={styles.navTitle}>
-        <span className={styles.green}>E</span> -TaxiLife
-      </div>
-
-      {/* Contenu des liens et du numéro de téléphone */}
-      <div className={styles.navContent}>
-        <div className={styles.phoneContainer}>
-          <Player
-            autoplay
-            loop
-            src="/animations/animation.json"
-            style={{ height: '40px', width: '40px' }}
-          />
-          <span className={styles.phoneNumber}>+33 6 12 34 56 78</span>
-        </div>
-        <ul className={styles.navLinks}>
-          <li>
-            <Link href="/transport-privee" className={styles.navLink}>Transport Privée</Link> {/* Lien pour Transport Privée */}
-          </li>
-          <li>
-            <Link href="/trajet-longue-distance" className={styles.navLink}>Trajet longue distance</Link> {/* Lien pour Trajet longue distance */}
-          </li>
-          <li>
-            <Link href="/transport-hospitalier" className={styles.navLink}>Transport hospitalier</Link> {/* Lien pour Transport hospitalier */}
-          </li>
-          <li>
-            <Link href="/transport-de-colis" className={styles.navLink}>Transport de colis</Link> {/* Lien pour Transport de colis */}
-          </li>
-          <li>
-            <Link href="/taxi-pour-evenement" className={styles.navLink}>Taxi pour événement</Link> {/* Lien pour Taxi pour événement */}
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
+     <div className={styles.navContent}>
+       <div className={styles.phoneContainer}>
+         <Player
+           autoplay
+           loop
+           src="/animations/animation.json"
+           style={{ height: '40px', width: '40px' }}
+         />
+         <span className={styles.phoneNumber}>+33 6 12 34 56 78</span>
+       </div>
+       <ul className={styles.navLinks}>
+         <li>
+           <Link href="/transport-privee" className={styles.navLink}>
+             {language === 'fr' ? 'Transport Privée' : 'Private Transport'}
+           </Link>
+         </li>
+         <li>
+           <Link href="/trajet-longue-distance" className={styles.navLink}>
+             {language === 'fr' ? 'Trajet longue distance' : 'Long Distance Travel'}
+           </Link>
+         </li>
+         <li>
+           <Link href="/transport-hospitalier" className={styles.navLink}>
+             {language === 'fr' ? 'Transport hospitalier' : 'Hospital Transport'}
+           </Link>
+         </li>
+         <li>
+           <Link href="/transport-de-colis" className={styles.navLink}>
+             {language === 'fr' ? 'Transport de colis' : 'Parcel Transport'}
+           </Link>
+         </li>
+         <li>
+           <Link href="/taxi-pour-evenement" className={styles.navLink}>
+             {language === 'fr' ? 'Taxi pour événement' : 'Event Taxi'}
+           </Link>
+         </li>
+         <li>
+           <div className={styles.languageSelector}>
+             <button 
+               className={`${styles.langButton} ${language === 'fr' ? styles.active : ''}`}
+               onClick={() => setLanguage('fr')}
+             >
+               FR
+             </button>
+             <span className={styles.langSeparator}>|</span>
+             <button 
+               className={`${styles.langButton} ${language === 'en' ? styles.active : ''}`}
+               onClick={() => setLanguage('en')}
+             >
+               EN
+             </button>
+           </div>
+         </li>
+       </ul>
+     </div>
+   </nav>
+ );
 };
 
 export default Navbar;

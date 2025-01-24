@@ -1,12 +1,12 @@
+/* Garantie.module.css */
 .garantieContainer {
   position: relative;
   height: 450px;
   width: 100%;
-  background-color: #f4f4f4;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
   overflow: hidden;
 }
 
-/* Classe pour l'animation */
 .animated {
   opacity: 0;
   transform: translateX(-100%);
@@ -40,12 +40,16 @@
 }
 
 .garantieText {
-  font-size: 3.0rem;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  text-align: left;
-  margin: 20px;
-  padding-left: 100px;
+ font-size: 2.8rem; /* Réduit de 3.5rem à 2.8rem */
+ font-weight: 800;
+ color: #24f109;
+ text-align: left;
+ margin: 20px;
+ padding-left: 100px;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+ 
 }
 
 .animationTextContainer,
@@ -54,29 +58,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
   width: 100%;
   padding-right: 220px;
+  transition: transform 0.3s ease;
+}
+
+.animationTextContainer:hover,
+.animationTransportContainer:hover,
+.animationStandardContainer:hover {
+  transform: translateX(10px);
 }
 
 .textNextToAnimation {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: #333;
   text-align: left;
+  transition: color 0.3s ease;
+}
+
+.animationTextContainer:hover .textNextToAnimation,
+.animationTransportContainer:hover .textNextToAnimation,
+.animationStandardContainer:hover .textNextToAnimation {
+  color: #24f109;
 }
 
 .animationStandardContainer {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .animationTextContainer {
-  margin: 30px;
+  margin: 35px;
 }
 
-/* Image de fond */
 .garentieImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+@media (max-width: 768px) {
+  .garantieText {
+    font-size: 2.5rem;
+    padding-left: 50px;
+  }
+
+  .textNextToAnimation {
+    font-size: 1.8rem;
+  }
+
+  .animationTextContainer,
+  .animationTransportContainer,
+  .animationStandardContainer {
+    padding-right: 100px;
+  }
 }

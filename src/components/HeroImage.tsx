@@ -1,13 +1,16 @@
+// HeroImage.tsx
 'use client';
 
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../context/LanguageContext';
 import styles from './HeroImage.module.css';
 
 const HeroImage: React.FC = () => {
+  const { translations } = useLanguage();
+
   return (
     <div className={styles.imageContainer}>
-      {/* Image */}
       <Image
         src="/image/taxilife.jpg"
         alt="Une belle vue de TaxiLife"
@@ -16,10 +19,8 @@ const HeroImage: React.FC = () => {
         height={400}
         priority
       />
-
-      {/* Texte au centre */}
       <div className={styles.centeredText}>
-        Disponible 24h/24-7j/7
+        {translations.hero.available}
       </div>
     </div>
   );

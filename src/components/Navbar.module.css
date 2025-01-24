@@ -1,58 +1,51 @@
-/* Style de la Navbar */
 .navbar {
   position: fixed;
   display: flex;
-  justify-content: center; /* Centre le contenu horizontalement */
-  align-items: center; /* Centre le contenu verticalement */
-  height: 100px; /* Hauteur fixe pour la navbar */
-  background-color: #000000; /* Couleur de fond */
-  padding: 0 2rem; /* Espacement horizontal */
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #000000;
+  padding: 0 2rem;
   color: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet */
-  z-index: 1000; /* Pour que la navbar soit au-dessus des autres éléments */
-  width: 100%; /* Largeur de 100% */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 100%;
 }
 
-/* Classe quand on scroll */
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.8);  /* Changer la couleur du fond lorsqu'on défile */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
 }
 
-/* Style pour l'image dans le logo */
 .logo img {
-  border-radius: 50%; /* Rendre l'image circulaire */
-  display: block; /* Assure un bon rendu */
+  border-radius: 50%;
+  display: block;
   border: #24f109 solid 2px;
 }
 
-/* Liste des liens */
 .navLinks {
   list-style: none;
   display: flex;
   gap: 1.2rem;
   margin: 0;
   padding: 0;
-  margin-left: auto; /* Pousse les liens à droite */
+  margin-left: auto;
 }
 
-/* Style des liens */
 .navLink {
   text-decoration: none;
-  color:#24f109 ;
+  color: #24f109;
   font-weight: bold;
-  position: relative; /* Nécessaire pour placer l'animation */
-  padding-bottom: 5px; /* Espace pour l'animation */
+  position: relative;
+  padding-bottom: 5px;
   transition: color 0.3s ease;
   font-size: 19px;
 }
 
-/* Barre animée sous les liens */
 .navLink::after {
   content: '';
   position: absolute;
@@ -60,200 +53,129 @@
   bottom: 0;
   height: 2px;
   width: 0%;
-  background-color: #24f109; /* Couleur de la barre */
+  background-color: #24f109;
   transition: width 0.3s ease-in-out;
 }
 
 .navLink:hover::after {
-  width: 100%; /* La barre s'étend sur toute la largeur au survol */
+  width: 100%;
 }
 
-/* Lien actif (barre permanente) */
 .navLink.active::after {
-  width: 100%; /* La barre est toujours visible pour le lien actif */
+  width: 100%;
 }
 
-/* Conteneur pour le numéro de téléphone et l'animation */
 .phoneContainer {
-  display: flex; /* Aligne l'animation et le numéro sur une ligne */
-  align-items: center; /* Centre verticalement */
-  gap: 10px; /* Espace entre l'animation et le numéro */
-  border: 2px solid green; /* Bordure verte */
-  padding: 5px 5px; /* Espacement interne */
-  border-radius: 8px; /* Coins arrondis */
-  background-color: #e8f5e9; /* Fond vert clair */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid green;
+  padding: 5px 5px;
+  border-radius: 8px;
+  background-color: #e8f5e9;
   width: 250px;
-  margin-left: 750px;
+  margin-left: 20px;
 }
 
-/* Style du numéro de téléphone */
 .phoneNumber {
   font-size: 18px;
   font-weight: bold;
-  color:#24f109; /* Texte vert foncé */
+  color: #24f109;
 }
 
-/* Ajout d'un effet au survol */
 .phoneContainer:hover {
-  background-color: #c8e6c9; /* Vert clair au survol */
-  border-color: #2e7d32; /* Bordure plus foncée au survol */
+  background-color: #c8e6c9;
+  border-color: #2e7d32;
 }
 
-/* Titre centré dans la navbar */
 .navTitle {
   font-size: 45px;
   font-weight: bold;
   color: #ffffff;
-  text-align: center; /* Centre le texte */
-  flex-grow: 1; /* Le titre prend toute la place restante */
+  text-align: center;
+  flex-grow: 1;
   display: flex;
-  justify-content: center; /* Centre le contenu horizontalement */
-  align-items: center; /* Centre le contenu verticalement */
+  justify-content: center;
+  align-items: center;
   opacity: 0;
-  transform: translateY(-20px); /* Légèrement déplacé vers le haut au début */
-  transition: transform 1s ease, opacity 1s ease; /* Animation */
+  transform: translateY(-20px);
+  transition: transform 1s ease, opacity 1s ease;
 }
 
 .green {
   color: #24f109;
 }
 
-/* Conteneur principal */
-.container {
+.navContent {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;  /* Prend toute la hauteur de la vue */
-  position: relative;
+  gap: 20px;
 }
 
-/* Conteneur pour l'image */
-.imageContainer {
-  width: 100%;
-  height: 750px; /* Hauteur de l'image */
-  position: relative;
-}
-
-/* Style de l'image */
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Permet à l'image de couvrir toute la zone sans distorsion */
-  filter: grayscale(100%); /* Met l'image en noir et blanc */
-}
-
-/* Conteneur du formulaire */
-.formContainer {
-  position: absolute;
-  top: -80px;  /* Décale le formulaire de 100px vers le haut (pour le chevauchement) */
-  left: 50%;
-  transform: translateX(-50%);  /* Centre horizontalement */
-  width: 50%;  /* Largeur du conteneur */
-  height: 800px;  /* Hauteur du conteneur */
-  background-color: rgba(128, 128, 128, 0.5);  /* Gris transparent */
-  display: flex;  /* Utilisation de flexbox pour centrer */
-  justify-content: center;  /* Centre horizontalement */
-  align-items: center;  /* Centre verticalement */
-  z-index: 1;  /* Le conteneur se place au-dessus de l'image */
-  margin: 0 auto;  /* Assure que le conteneur est centré */
-  border-radius: 25px;
-  padding-top: 20px;  /* Espacement pour que le texte soit un peu plus bas */
-}
-
-/* Conteneur enfant dans le formulaire */
-.childContainer {
-  width: 80%;  /* Largeur de l'enfant par rapport au conteneur parent */
-  height: 80%;  /* Hauteur du conteneur enfant */
-  background-color: rgba(255, 255, 255, 0.8);  /* Fond blanc transparent */
+.languageSelector {
   display: flex;
-  flex-direction: column;  /* Aligner les éléments du formulaire verticalement */
-  justify-content: flex-start;  /* Aligne le contenu en haut du conteneur */
-  align-items: center;  /* Centre horizontalement */
-  border-radius: 10px;  /* Coins arrondis */
-  padding: 20px;
-  box-sizing: border-box;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4px 8px;
+  margin-left: 20px;
 }
 
-/* Titre du formulaire - visible sans flou */
-.formTitle {
-  font-size: 44px ;
-  font-weight: 800;
-  color: rgb(5, 5, 5);
-  text-align: center;  /* Centre le texte horizontalement */
-  margin-bottom: 20px;  /* Espace entre le titre et les autres éléments */
-  z-index: 2;  /* Assure que le titre soit au-dessus du flou */
-  filter: none;  /* Supprime le flou du titre */
-  transform: scaleY(1.2);  /* Augmente la hauteur des lettres */
-  margin-top: 0; /* Assure que le titre est bien aligné en haut */
+.langButton {
+  background: none;
+  border: none;
+  color: white;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px;
+  transition: all 0.3s ease;
 }
 
-/* Texte sous le formulaire - Les champs obligatoires */
-.requiredText {
-  font-size: 16px;
-  color: rgb(5, 5, 5);
-  text-align: left;  /* Aligne le texte à gauche */
-  width: 100%;
-  margin-top: 10px;  /* Espacement entre le titre et le texte */
-  padding-left: 20px;  /* Aligne le texte avec un peu de marge à gauche */
+.langButton.active {
+  background-color: #24f109;
+  color: black;
 }
 
-/* Style des champs (Nom, Prénom, Téléphone, Adresse de départ) */
-.inputContainer {
-  display: flex;  /* Aligne les champs côte à côte */
-  justify-content: space-between;  /* Crée un espace entre les champs */
-  width: 100%;  /* Prend toute la largeur du conteneur */
-  margin-top: 20px;  /* Espacement entre les autres éléments et les champs */
+.langSeparator {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 4px;
 }
 
-.inputField {
-  width: 48%;  /* Chaque champ prend 48% de la largeur, donc 2 champs côte à côte */
-  height: 35px;  /* Hauteur du champ */
-  border: none;  /* Supprime la bordure classique */
-  border-bottom: 1px solid #000;  /* Bordure inférieure noire très fine */
-  background-color: #fff;  /* Fond blanc */
-  border-radius: 0;  /* Pas de coins arrondis pour les champs */
-  padding: 5px;  /* Espacement interne */
-  box-sizing: border-box;
-  color: rgb(5, 5, 5);  /* Couleur du texte noire */
+.langButton:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.inputContainer2 {
-  display: flex;  /* Aligne les champs côte à côte */
-  justify-content: space-between;  /* Crée un espace entre les champs */
-  width: 100%;  /* Prend toute la largeur du conteneur */
-  margin-top: 20px;  /* Espacement entre les autres éléments et les champs */
+@media (max-width: 1200px) {
+  .navLinks {
+    gap: 0.8rem;
+  }
+  
+  .navLink {
+    font-size: 16px;
+  }
+  
+  .phoneContainer {
+    width: 200px;
+    margin-left: 10px;
+  }
 }
 
-/* Style spécifique pour le champ Date de prise en charge */
-.inputFieldFullWidth {
-  width: 100%;  /* Prend toute la largeur du conteneur */
-  height: 35px;  /* Hauteur du champ */
-  border: none;  /* Supprime la bordure classique */
-  border-bottom: 1px solid #000;  /* Bordure inférieure noire très fine */
-  background-color: #fff;  /* Fond blanc */
-  border-radius: 0;  /* Pas de coins arrondis pour le champ */
-  padding: 5px;  /* Espacement interne */
-  box-sizing: border-box;
-  color: rgb(5, 5, 5);  /* Couleur du texte noire */
-}
-
-/* Style du bouton "Envoyer" */
-.submitButton {
-  background-color: #24f109; /* Fond vert */
-  color: white;  /* Texte en blanc */
-  font-size: 16px;  /* Taille du texte */
-  font-weight: bold;  /* Texte en gras */
-  padding: 10px 20px;  /* Espacement interne (haut-bas, gauche-droite) */
-  border: none;  /* Supprime la bordure */
-  border-radius: 5px;  /* Coins arrondis */
-  cursor: pointer;  /* Curseur en forme de main pour indiquer que c'est cliquable */
-  width: 100%;  /* Prend toute la largeur du parent */
-  max-width: 400px;  /* Limite la largeur à 400px */
-  margin-top: 20px;  /* Espacement entre le bouton et les autres éléments */
-  transition: background-color 0.3s ease;  /* Animation pour un effet de survol */
-}
-
-/* Style au survol du bouton */
-.submitButton:hover {
-  background-color: #1e8e06;  /* Changement de couleur au survol (vert plus foncé) */
+@media (max-width: 968px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .navTitle {
+    font-size: 35px;
+  }
+  
+  .navLinks {
+    display: none;
+  }
+  
+  .phoneContainer {
+    margin-left: auto;
+  }
 }

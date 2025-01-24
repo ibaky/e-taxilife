@@ -1,7 +1,7 @@
 'use client';
-
 import './globals.css';
 import { KitchnProvider } from 'kitchn';
+import { LanguageProvider } from '../context/LanguageContext';
 
 export default function RootLayout({
   children,
@@ -11,9 +11,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <KitchnProvider>
-          {children}
-        </KitchnProvider>
+        <LanguageProvider>
+          <KitchnProvider>
+            {children}
+          </KitchnProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
