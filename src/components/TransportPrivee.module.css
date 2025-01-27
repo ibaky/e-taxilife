@@ -3,7 +3,7 @@
 .transportPriveeContainer {
   width: 100%;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 80px 20px;
   font-family: 'Roboto', sans-serif;
   color: #333;
   background-color: #ffffff;
@@ -19,6 +19,11 @@
   width: 100%;
 }
 
+.bannerImage {
+  width: 50%;
+  border-radius: 10px;
+}
+
 .bannerText {
   width: 50%;
   text-align: left;
@@ -27,44 +32,45 @@
   justify-content: flex-start;
 }
 
-.bannerText h1 {
+.bannerTitle {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 900;
   color: #1a1a1a;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
 }
 
-.largeBoldText {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #1a1a1a;
+.subtitle {
+  font-size: 1.25rem;
   margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.bannerText p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
   color: #333;
-  line-height: 1.8;
   font-weight: 400;
 }
 
-.bannerImage {
-  width: 50%;
-  border-radius: 10px;
+.bannerDescription {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: #333;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
-.highlight {
+.reservationButton {
   background-color: #13f70b;
-  padding: 5px 15px;
-  font-weight: bold;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
   border-radius: 8px;
-  display: inline-block;
-  margin-bottom: 10px;
-  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.reservationButton:hover {
+  background-color: #0eb20a;
+  transform: translateY(-2px);
 }
 
 .contentSection {
@@ -89,63 +95,36 @@
   border-radius: 10px;
 }
 
+.sectionImageLarger {
+  width: 60%;
+  border-radius: 10px;
+}
+
+.sectionImageSmaller {
+  width: 40%;
+  border-radius: 10px;
+}
+
 .textBlock {
   width: 50%;
   text-align: left;
 }
 
-.textBlock h2 {
+.sectionTitle {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 900;
   color: #1a1a1a;
   margin-bottom: 1.5rem;
   line-height: 1.2;
   letter-spacing: -0.5px;
 }
 
-.textBlock p {
+.sectionDescription {
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
   color: #333;
-  line-height: 1.8;
+  line-height: 1.6;
   font-weight: 400;
-}
-
-.servicesGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  margin-top: 80px;
-  width: 100%;
-}
-
-.serviceItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f8f8f8;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.serviceItem:nth-child(odd) {
-  flex-direction: row;
-}
-
-.serviceItem:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.serviceImage {
-  width: 50%;
-  border-radius: 10px;
-}
-
-.serviceText {
-  width: 50%;
-  text-align: left;
 }
 
 .reservationSection {
@@ -156,29 +135,28 @@
   border-radius: 10px;
   color: white;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.reservationButton {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 20px 40px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 8px;
-  margin-top: 30px;
-  transition: all 0.3s ease;
+.reservationTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
 }
 
-.reservationButton:hover {
-  background-color: #218838;
-  transform: translateY(-2px);
+.reservationDescription {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .navigationPath {
   margin-top: 50px;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   text-align: center;
   color: #666;
   width: 100%;
