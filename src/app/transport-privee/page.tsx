@@ -1,15 +1,29 @@
-import React from 'react';
+'use client';
 
-const TransportPriveePage: React.FC = () => {
+import React from 'react';
+import Navbar from '../../components/Navbar';
+import TransportPrivee from '../../components/TransportPrivee';
+import FooterComponent from '../../components/Footer';
+import { KitchnProvider } from 'kitchn';
+import Garantie from '@/components/Garantie';
+
+const TransportPriveePage = () => {
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>Transport Privé</h1>
-      <p>
-        Découvrez notre service de transport privé, conçu pour offrir un confort et une exclusivité
-        à nos clients. Nous vous garantissons un service de qualité et adapté à vos besoins.
-      </p>
-    </div>
+    <KitchnProvider>
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Contenu principal */}
+      <TransportPrivee />
+      
+      
+      <Garantie />
+      
+      {/* Footer */}
+      <FooterComponent />
+    </KitchnProvider>
   );
 };
 
 export default TransportPriveePage;
+

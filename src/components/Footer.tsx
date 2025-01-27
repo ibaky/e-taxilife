@@ -1,148 +1,79 @@
 import React from 'react';
 import { Footer, FooterGroup, FooterLink } from 'kitchn';
-import { Player } from '@lottiefiles/react-lottie-player'; // Importation de Lottie
-import styles from './footer.module.css'; // Importation du CSS du footer
+import { Player } from '@lottiefiles/react-lottie-player';
+import { useLanguage } from '../context/LanguageContext';
+import styles from './footer.module.css';
 
 const FooterComponent: React.FC = () => {
+  const { translations } = useLanguage();
+
   return (
     <div className={styles.footerContainer}>
       <Footer>
-        {/* Groupe "Contact-moi" */}
-        <FooterGroup title="Contact-moi" className={styles.footerGroup}>
+        <FooterGroup title={translations.footer.contactTitle} className={styles.footerGroup}>
           <div className={styles.footerLinks}>
-            {/* Ajouter animation à gauche du numéro de téléphone */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2805-smartphone-2-hover-phone-ring-alt.json" // Choisissez l'animation que vous souhaitez
-                style={{ height: '30px', width: '30px' }} // Ajustez la taille de l'animation
-              />
-              <FooterLink href="#">+33 6 12 34 56 78</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2805-smartphone-2-hover-phone-ring-alt.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.phone}</FooterLink>
             </div>
-
-            {/* Ajouter animation à gauche de l'adresse */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-53-location-pin-on-round-map-hover-jump.json" // Choisissez l'animation que vous souhaitez
-                style={{ height: '30px', width: '30px' }} // Ajustez la taille de l'animation
-              />
-              <FooterLink href="#">rue maltilde 76000 rouen</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-53-location-pin-on-round-map-hover-jump.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.address}</FooterLink>
             </div>
-
-            {/* Ajouter animation à gauche de l'email */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-1141-email-hover-rotation.json" // Choisissez l'animation que vous souhaitez
-                style={{ height: '30px', width: '30px' }} // Ajustez la taille de l'animation
-              />
-              <FooterLink href="#">contact@montransport.com</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-1141-email-hover-rotation.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.email}</FooterLink>
             </div>
           </div>
         </FooterGroup>
 
-        {/* Groupe "Reseau" */}
-        <FooterGroup title="Reseau" className={styles.footerGroup}>
+        <FooterGroup title={translations.footer.networkTitle} className={styles.footerGroup}>
           <div className={styles.footerLinks}>
-            {/* Lien Facebook avec animation */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2540-logo-facebook-hover-pinch.json"
-                style={{ height: '30px', width: '30px' }}
-              />
-              <FooterLink href="#">Facebook</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2540-logo-facebook-hover-pinch.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.socialNetworks.facebook}</FooterLink>
             </div>
-
-            {/* Lien Instagram avec animation */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2542-logo-instagram-hover-rotate.json"
-                style={{ height: '30px', width: '30px' }}
-              />
-              <FooterLink href="#">Instagram</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2542-logo-instagram-hover-rotate.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.socialNetworks.instagram}</FooterLink>
             </div>
-
-            {/* Lien X avec animation */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2714-logo-x-hover-draw.json"
-                style={{ height: '30px', width: '30px' }}
-              />
-              <FooterLink href="#">X</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2714-logo-x-hover-draw.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.socialNetworks.twitter}</FooterLink>
             </div>
-
-            {/* Lien YouTube avec animation */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2631-logo-circle-youtube-morph-logotype.json"
-                style={{ height: '30px', width: '30px' }}
-              />
-              <FooterLink href="#">Youtube</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2631-logo-circle-youtube-morph-logotype.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.socialNetworks.youtube}</FooterLink>
             </div>
-
-            {/* Lien SnapChat avec animation */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2552-logo-snapchat-hover-pinch.json"
-                style={{ height: '30px', width: '30px' }}
-              />
-              <FooterLink href="#">SnapChat</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2552-logo-snapchat-hover-pinch.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.socialNetworks.snapchat}</FooterLink>
             </div>
-
-            {/* Lien Discord avec animation */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2649-logo-circle-discord-hover-rotation.json"
-                style={{ height: '30px', width: '30px' }}
-              />
-              <FooterLink href="#">Discord</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2649-logo-circle-discord-hover-rotation.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.socialNetworks.discord}</FooterLink>
             </div>
-
-            {/* Lien TikTok avec animation */}
             <div className={styles.iconWithText}>
-              <Player
-                autoplay
-                loop
-                src="/animations/wired-outline-2546-logo-tiktok-hover-pinch.json"
-                style={{ height: '30px', width: '30px' }}
-              />
-              <FooterLink href="#">TikTok</FooterLink>
+              <Player autoplay loop src="/animations/wired-outline-2546-logo-tiktok-hover-pinch.json" style={{ height: '30px', width: '30px' }} />
+              <FooterLink href="#">{translations.footer.socialNetworks.tiktok}</FooterLink>
             </div>
           </div>
         </FooterGroup>
 
-        {/* Groupe "conditions" */}
-        <FooterGroup title="Conditions" className={styles.footerGroup}>
+        <FooterGroup title={translations.footer.termsTitle} className={styles.footerGroup}>
           <div className={styles.footerLinks}>
-            <FooterLink href="#">Conditions Générales</FooterLink>
-            <FooterLink href="#">Guides</FooterLink>
-            <FooterLink href="#">Support</FooterLink>
-            <FooterLink href="#">Politique de Confidentialité</FooterLink>
+            <FooterLink href="#">{translations.footer.terms.general}</FooterLink>
+            <FooterLink href="#">{translations.footer.terms.guides}</FooterLink>
+            <FooterLink href="#">{translations.footer.terms.support}</FooterLink>
+            <FooterLink href="#">{translations.footer.terms.privacy}</FooterLink>
           </div>
         </FooterGroup>
       </Footer>
 
-      {/* Footer Bottom */}
       <div className={styles.footerBottom}>
-        <p>© 2024 e-TaxiLife. All rights reserved.</p>
+        <p>{translations.footer.copyright}</p>
         <p>
-          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          <a href="#">{translations.footer.terms.privacy}</a> | <a href="#">{translations.footer.terms.general}</a>
         </p>
       </div>
     </div>

@@ -5,6 +5,7 @@ import FormulaireReservation from '../components/FormulaireReservation'; // Impo
 import Presentation from '../components/Presentation'; // Importer Presentation
 import Garantie from '../components/Garantie'; // Importer le composant Garantie
 import FooterComponent from '../components/Footer'; // Importer Footer
+import CookiePopup from '../components/CookiePopup'; // Importer la pop-up de cookies
 import './globals.css'; // Import des styles globaux
 import { KitchnProvider } from 'kitchn'; // Import du KitchnProvider si nécessaire
 
@@ -25,6 +26,9 @@ export default function Home() {
 
       {/* Ajouter Garantie sous la section Presentation */}
       <Garantie />
+
+      {/* Afficher la pop-up de cookies */}
+      <CookiePopup />
 
       {/* Ajouter Footer en bas de la page */}
       <FooterComponent />

@@ -48,15 +48,6 @@ interface FormTranslations {
  unknownError: string;
 }
 
-interface GarantieTranslations {
- title: string;
- subtitle: string;
- electricTaxi: string;
- transportForAll: string;
- available24_7: string;
- imageAlt: string;
-}
-
 interface PresentationTranslations {
  title: string;
  services: {
@@ -83,12 +74,47 @@ interface PresentationTranslations {
  };
 }
 
+interface GarantieTranslations {
+ title: string;
+ subtitle: string;
+ electricTaxi: string;
+ transportForAll: string;
+ available24_7: string;
+ imageAlt: string;
+}
+
+interface FooterTranslations {
+ contactTitle: string;
+ networkTitle: string;
+ termsTitle: string;
+ phone: string;
+ address: string;
+ email: string;
+ socialNetworks: {
+   facebook: string;
+   instagram: string;
+   twitter: string;
+   youtube: string;
+   snapchat: string;
+   discord: string;
+   tiktok: string;
+ };
+ terms: {
+   general: string;
+   guides: string;
+   support: string;
+   privacy: string;
+ };
+ copyright: string;
+}
+
 interface Translations {
  nav: NavigationTranslations;
  hero: HeroTranslations;
  form: FormTranslations;
- garantie: GarantieTranslations;
  presentation: PresentationTranslations;
+ garantie: GarantieTranslations;
+ footer: FooterTranslations;
 }
 
 interface LanguageContextType {
@@ -116,7 +142,7 @@ const translations: Record<Language, Translations> = {
      lastName: "Nom",
      phone: "Téléphone",
      startAddress: "Adresse de départ",
-     endAddress: "Adresse de destination",
+     endAddress: "Adresse de destination", 
      passengers: "Nombre de passagers",
      luggage: "Nombre de bagages",
      hours: "Heures",
@@ -128,7 +154,7 @@ const translations: Record<Language, Translations> = {
        lastName: "Le prénom est requis",
        phone: "Le téléphone est requis",
        startAddress: "L'adresse de départ est requise",
-       endAddress: "L'adresse de destination est requise",
+       endAddress: "L'adresse de destination est requise", 
        passengers: "Le nombre de passagers est requis",
        luggage: "Le nombre de bagages est requis",
        date: "La date de prise en charge est requise",
@@ -142,7 +168,7 @@ const translations: Record<Language, Translations> = {
    },
    garantie: {
      title: "Nous vous",
-     subtitle: "garantissons",
+     subtitle: "garantissons", 
      electricTaxi: "Taxi Electrique",
      transportForAll: "Transport pour tous",
      available24_7: "Standard disponible 24h/7",
@@ -157,7 +183,7 @@ const translations: Record<Language, Translations> = {
        },
        longDistance: {
          title: "Trajet longue distance",
-         content: "Transport confortable pour longs trajets"
+         content: "Transport confortable pour longs trajets"  
        },
        hospitalTransport: {
          title: "Transport hospitalier",
@@ -169,9 +195,33 @@ const translations: Record<Language, Translations> = {
        },
        eventTaxi: {
          title: "Taxi pour événement",
-         content: "Service pour vos événements spéciaux"
+         content: "Service pour vos événements spéciaux" 
        }
      }
+   },
+   footer: {
+     contactTitle: "Contact-moi",
+     networkTitle: "Réseau",
+     termsTitle: "Conditions", 
+     phone: "+33 6 12 34 56 78",
+     address: "rue maltilde 76000 rouen",
+     email: "contact@montransport.com",
+     socialNetworks: {
+       facebook: "Facebook",
+       instagram: "Instagram",
+       twitter: "X",
+       youtube: "Youtube", 
+       snapchat: "SnapChat",
+       discord: "Discord", 
+       tiktok: "TikTok"
+     },
+     terms: {
+       general: "Conditions Générales",
+       guides: "Guides",
+       support: "Support",
+       privacy: "Politique de Confidentialité"
+     },
+     copyright: "© 2024 e-TaxiLife. Tous droits réservés."
    }
  },
  en: {
@@ -183,7 +233,7 @@ const translations: Record<Language, Translations> = {
      eventTaxi: "Event Taxi"
    },
    hero: {
-     available: "Available 24/7"
+     available: "Available 24/7" 
    },
    form: {
      title: "Booking Form",
@@ -191,13 +241,13 @@ const translations: Record<Language, Translations> = {
      firstName: "First Name",
      lastName: "Last Name",
      phone: "Phone Number",
-     startAddress: "Pickup Address",
+     startAddress: "Pickup Address", 
      endAddress: "Destination Address",
      passengers: "Number of Passengers",
      luggage: "Number of Luggage",
      hours: "Hours",
      date: "Pickup Date",
-     agreement: "By submitting this form, I agree that the entered information will be processed by E-taxilife-rouen metropole as part of my contact request and potential business relationship.",
+     agreement: "By submitting this form, I agree that the information will be processed by E-taxilife-rouen metropole as part of my contact request and potential business relationship.",
      submitButton: "Submit",
      errors: {
        name: "Name is required",
@@ -205,8 +255,8 @@ const translations: Record<Language, Translations> = {
        phone: "Phone number is required",
        startAddress: "Pickup address is required",
        endAddress: "Destination address is required",
-       passengers: "Number of passengers is required",
-       luggage: "Number of luggage is required",
+       passengers: "Number of passengers is required", 
+       luggage: "Number of luggage items is required",
        date: "Pickup date is required",
        agreement: "You must accept the terms and conditions"
      },
@@ -219,7 +269,7 @@ const translations: Record<Language, Translations> = {
    garantie: {
      title: "We",
      subtitle: "guarantee you",
-     electricTaxi: "Electric Taxi",
+     electricTaxi: "Electric Taxi", 
      transportForAll: "Transport for All",
      available24_7: "Available 24/7",
      imageAlt: "Guarantee image"
@@ -233,7 +283,7 @@ const translations: Record<Language, Translations> = {
        },
        longDistance: {
          title: "Long Distance Travel",
-         content: "Comfortable transport for long journeys"
+         content: "Comfortable transport for long journeys" 
        },
        hospitalTransport: {
          title: "Hospital Transport",
@@ -248,6 +298,30 @@ const translations: Record<Language, Translations> = {
          content: "Service for your special events"
        }
      }
+   },
+   footer: {
+     contactTitle: "Contact me",
+     networkTitle: "Network",
+     termsTitle: "Terms",
+     phone: "+33 6 12 34 56 78",
+     address: "rue maltilde 76000 rouen",
+     email: "contact@montransport.com",
+     socialNetworks: {
+       facebook: "Facebook",
+       instagram: "Instagram",
+       twitter: "X",
+       youtube: "Youtube",
+       snapchat: "SnapChat",
+       discord: "Discord",
+       tiktok: "TikTok"
+     },
+     terms: {
+       general: "Terms and Conditions",
+       guides: "Guides", 
+       support: "Support",
+       privacy: "Privacy Policy"
+     },
+     copyright: "© 2024 e-TaxiLife. All rights reserved."
    }
  }
 };
