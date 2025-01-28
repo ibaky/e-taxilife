@@ -3,51 +3,63 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CookiePopup.module.css";
 
+const COOKIE_EXPIRATION_DAYS = 30;
+
+const setCookieWithExpiration = (value: string) => {
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + COOKIE_EXPIRATION_DAYS);
+  const cookieData = {
+    value,
+    expires: expirationDate.getTime(),
+  };
+  localStorage.setItem("cookiesAccepted", JSON.stringify(cookieData));
+};
+
 const CookiePopup: React.FC = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
   useEffect(() => {
-    // Force la suppression des cookies pour tester (Supprime après test)
-    localStorage.removeItem("cookiesAccepted");
-
-    const hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
-    console.log("Valeur de localStorage au chargement:", hasAcceptedCookies);
-
-    if (!hasAcceptedCookies || hasAcceptedCookies === "false") {
-      setShowPopup(true);
-    }
+    setTimeout(() => {
+      const storedData = localStorage.getItem("cookiesAccepted");
+      if (!storedData) {
+        setShowPopup(true);
+      }
+    }, 2000);
   }, []);
 
   const handleAccept = () => {
-    console.log("Cookies acceptés, stockage dans localStorage");
-    localStorage.setItem("cookiesAccepted", "true");
+    setCookieWithExpiration("true");
     setShowPopup(false);
   };
 
-  // Bouton temporaire pour réinitialiser les cookies
-  const handleReset = () => {
-    console.log("Réinitialisation des cookies...");
-    localStorage.removeItem("cookiesAccepted");
-    setShowPopup(true);
+  const handleReject = () => {
+    setCookieWithExpiration("false");
+    setShowPopup(false);
   };
 
   return (
     showPopup && (
       <div className={styles.cookiePopup}>
         <div className={styles.cookieContent}>
+          <h3 className={styles.title}>🍪 Nous respectons votre vie privée</h3>
           <p>
             Nous utilisons des cookies pour améliorer votre expérience sur notre site.
-            En poursuivant, vous acceptez notre{" "}
-            <a href="/politique-de-confidentialite">Politique de Confidentialité</a>.
+            Vous pouvez choisir d'accepter ou de refuser leur utilisation.
           </p>
           <div className={styles.buttonContainer}>
             <button onClick={handleAccept} className={styles.acceptButton}>
               Accepter
             </button>
-            <button onClick={handleReset} className={styles.resetButton}>
-              Réinitialiser Cookies
+            <button onClick={handleReject} className={styles.rejectButton}>
+              Refuser
+            </button>
+            <button onClick={() => window.location.href = "/parametres-cookies"} className={styles.settingsButton}>
+              Paramétrer
             </button>
           </div>
+          <p className={styles.privacyLink} style={{ marginTop: "20px" }}>
+            Consultez notre <a href="/politique-de-confidentialite">Politique de Confidentialité</a>.
+          </p>
         </div>
       </div>
     )

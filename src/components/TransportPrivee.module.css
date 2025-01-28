@@ -2,34 +2,64 @@
 
 .transportPriveeContainer {
   width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 4rem 2rem;
   font-family: 'Roboto', sans-serif;
   color: #333;
-  background-color: #ffffff;
-}
-
-.banner {
-  display: flex;
-  align-items: flex-start;
   background-color: #f8f8f8;
-  padding: 60px;
-  border-radius: 10px;
-  gap: 40px;
-  width: 100%;
 }
 
-.bannerImage {
+.banner, .contentSection {
+  background-color: white;
+  margin-bottom: 4rem;
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.banner:hover, .contentSection:hover {
+  transform: translateY(-5px);
+}
+
+.bannerImage, .sectionImage, .sectionImageLarger, .sectionImageSmaller {
   width: 50%;
   border-radius: 10px;
+  overflow: hidden;
 }
 
-.bannerText {
+.sectionImageLarger {
+  width: 60%;
+}
+
+.sectionImageSmaller {
+  width: 40%;
+}
+
+.bannerImage img, 
+.sectionImage img, 
+.sectionImageLarger img, 
+.sectionImageSmaller img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bannerImage img:hover, 
+.sectionImage img:hover, 
+.sectionImageLarger img:hover, 
+.sectionImageSmaller img:hover {
+  transform: scale(1.02);
+}
+
+.bannerText, .textBlock {
   width: 50%;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 .bannerTitle {
@@ -45,7 +75,7 @@
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #333;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .bannerDescription {
@@ -57,29 +87,23 @@
 }
 
 .reservationButton {
-  background-color: #13f70b;
-  color: white;
+  display: inline-block;
+  margin-top: 1rem;
+  color: #fff;
+  background-color: #28a745;
+  padding: 1rem 2rem;
   border: none;
-  padding: 16px 32px;
   font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
   border-radius: 8px;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .reservationButton:hover {
-  background-color: #0eb20a;
+  background-color: #218838;
   transform: translateY(-2px);
-}
-
-.contentSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 80px;
-  gap: 40px;
-  width: 100%;
 }
 
 .contentSection:nth-child(odd) {
@@ -88,26 +112,6 @@
 
 .contentSection:nth-child(even) {
   flex-direction: row-reverse;
-}
-
-.sectionImage {
-  width: 50%;
-  border-radius: 10px;
-}
-
-.sectionImageLarger {
-  width: 60%;
-  border-radius: 10px;
-}
-
-.sectionImageSmaller {
-  width: 40%;
-  border-radius: 10px;
-}
-
-.textBlock {
-  width: 50%;
-  text-align: left;
 }
 
 .sectionTitle {
@@ -151,7 +155,7 @@
   font-size: 1.25rem;
   margin-bottom: 2rem;
   color: #ffffff;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .navigationPath {
@@ -170,4 +174,22 @@
 
 .navigationPath a:hover {
   text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .banner, .contentSection {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .bannerImage, 
+  .sectionImage, 
+  .sectionImageLarger, 
+  .sectionImageSmaller,
+  .bannerText,
+  .textBlock {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
 }

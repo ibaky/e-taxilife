@@ -1,48 +1,84 @@
 .cookiePopup {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 500px;
-    background: #ffffff;
-    border: 2px solid #13f70b;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    z-index: 1000;
-  }
-  
-  .cookieContent p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .cookieContent a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .cookieContent a:hover {
-    text-decoration: underline;
-  }
-  
-  .acceptButton {
-    background: #13f70b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .acceptButton:hover {
-    background: #0eb20a;
-  }
-  
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.cookieContent p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.cookieContent a {
+  color: #218838;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cookieContent a:hover {
+  text-decoration: underline;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.acceptButton, .rejectButton, .settingsButton {
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.acceptButton {
+  background: #28a745;
+  color: white;
+}
+
+.acceptButton:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.rejectButton {
+  background: #dc3545;
+  color: white;
+}
+
+.rejectButton:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.settingsButton {
+  background: #ffc107;
+  color: black;
+}
+
+.settingsButton:hover {
+  background: #e0a800;
+  transform: scale(1.05);
+}
