@@ -1,3 +1,4 @@
+/* Animations */
 @keyframes buttonPulse {
   0% {
     transform: scale(1);
@@ -19,6 +20,7 @@
   }
 }
 
+/* Container principal */
 .transportPriveeContainer {
   width: 100%;
   max-width: 1400px;
@@ -29,7 +31,9 @@
   background-color: #f8f8f8;
 }
 
-.banner, .contentSection {
+/* Sections communes */
+.banner, 
+.contentSection {
   background-color: white;
   margin-bottom: 4rem;
   padding: 3rem 2rem;
@@ -41,12 +45,17 @@
   border-radius: 10px;
 }
 
-.banner:hover, .contentSection:hover {
+.banner:hover, 
+.contentSection:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   transform: translateY(-3px);
 }
 
-.bannerImage, .sectionImage, .sectionImageLarger, .sectionImageSmaller {
+/* Images */
+.bannerImage, 
+.sectionImage, 
+.sectionImageLarger, 
+.sectionImageSmaller {
   width: 50%;
   border-radius: 10px;
   overflow: hidden;
@@ -57,7 +66,7 @@
 }
 
 .sectionImageSmaller {
-  width: 60%;
+  width: 40%;
 }
 
 .bannerImage img, 
@@ -77,12 +86,15 @@
   filter: brightness(110%) contrast(110%);
 }
 
-.bannerText, .textBlock {
+/* Texte */
+.bannerText, 
+.textBlock {
   width: 50%;
   text-align: left;
 }
 
-.bannerTitle, .sectionTitle {
+.bannerTitle, 
+.sectionTitle {
   font-size: 2.5rem;
   font-weight: 900;
   color: #1a1a1a;
@@ -93,7 +105,8 @@
   display: inline-block;
 }
 
-.bannerTitle::after, .sectionTitle::after {
+.bannerTitle::after, 
+.sectionTitle::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -110,14 +123,16 @@
   font-weight: bold;
 }
 
-.bannerDescription {
+.bannerDescription,
+.sectionDescription {
   font-size: 1.125rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #333;
   line-height: 1.6;
   font-weight: 400;
 }
 
+/* Bouton de réservation */
 .reservationButton {
   display: inline-block;
   margin-top: 1rem;
@@ -159,8 +174,10 @@
 
 .reservationButton:hover {
   animation: buttonPulse 1s infinite;
+  background-position: right center;
 }
 
+/* Alternance des sections */
 .contentSection:nth-child(odd) {
   flex-direction: row;
 }
@@ -169,27 +186,17 @@
   flex-direction: row-reverse;
 }
 
-.sectionDescription {
-  font-size: 1.125rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-.contentSection {
-  transition: all 0.3s ease;
-}
-
-.contentSection:hover {
-  background-color: #f9f9f9;
-}
-
-/* Responsive Design */
+/* Tablette Responsive (1024px) */
 @media (max-width: 1024px) {
-  .banner, .contentSection {
+  .transportPriveeContainer {
+    padding: 3rem 1.5rem;
+  }
+
+  .banner, 
+  .contentSection {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
   }
 
   .bannerImage, 
@@ -199,6 +206,93 @@
   .bannerText,
   .textBlock {
     width: 100%;
+  }
+
+  .bannerTitle, 
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .contentSection:nth-child(odd),
+  .contentSection:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+/* Mobile Responsive (768px) */
+@media (max-width: 768px) {
+  .transportPriveeContainer {
+    padding: 2rem 1rem;
+  }
+
+  .banner, 
+  .contentSection {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .bannerTitle, 
+  .sectionTitle {
+    font-size: 1.85rem;
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+  }
+
+  .bannerDescription,
+  .sectionDescription {
+    font-size: 1.05rem;
+  }
+
+  .reservationButton {
+    padding: 0.875rem 1.75rem;
+    font-size: 1.15rem;
+  }
+}
+
+/* Small Mobile Responsive (480px) */
+@media (max-width: 480px) {
+  .transportPriveeContainer {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .banner, 
+  .contentSection {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
     margin-bottom: 1.5rem;
+  }
+
+  .bannerTitle, 
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .bannerDescription,
+  .sectionDescription {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .reservationButton {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .bannerImage, 
+  .sectionImage, 
+  .sectionImageLarger, 
+  .sectionImageSmaller {
+    margin-bottom: 1rem;
   }
 }

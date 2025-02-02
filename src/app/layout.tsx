@@ -2,6 +2,7 @@
 import './globals.css';
 import { KitchnProvider } from 'kitchn';
 import { LanguageProvider } from '../context/LanguageContext';
+import MobileNav from '../components/MobileNav';
 
 export default function RootLayout({
   children,
@@ -14,6 +15,7 @@ export default function RootLayout({
         <LanguageProvider>
           <KitchnProvider>
             {children}
+            <MobileNav />
           </KitchnProvider>
         </LanguageProvider>
       </body>

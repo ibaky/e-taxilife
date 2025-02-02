@@ -115,3 +115,43 @@
     padding-right: 100px;
   }
 }
+@media (max-width: 480px) {
+  .garantieContainer {
+    height: 600px;
+  }
+
+  .garantieEnfant {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .garantieText {
+    font-size: 1.8rem;
+    padding-left: 20px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .animationTextContainer,
+  .animationTransportContainer,
+  .animationStandardContainer {
+    padding-right: 0;
+    margin: 15px 0;
+    width: 90%;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  .textNextToAnimation {
+    font-size: 1.4rem;
+  }
+
+  .animationTextContainer {
+    margin: 15px 0;
+  }
+
+  .animationStandardContainer {
+    margin-top: 15px;
+  }
+}

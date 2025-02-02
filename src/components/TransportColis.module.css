@@ -164,3 +164,49 @@
     width: 100%;
   }
 }
+/* Existing styles remain the same */
+/* Existing media query for max-width: 1024px remains unchanged */
+
+/* New media query for 480px mobile screens */
+@media (max-width: 480px) {
+  .mainSection,
+  .tarifSection,
+  .additionalSection {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .additionalImage {
+    order: -1;
+    max-height: 250px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .additionalContent {
+    padding: 0;
+    width: 100%;
+  }
+
+  .additionalContent h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .additionalContent p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .firstSection,
+  .secondSection {
+    height: auto;
+  }
+
+  .enSavoirPlus {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}

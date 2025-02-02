@@ -166,7 +166,7 @@
     border-radius: 5px;  /* Coins arrondis */
     cursor: pointer;  /* Curseur en forme de main pour indiquer que c'est cliquable */
     width: 100%;  /* Prend toute la largeur du parent */
-    max-width: 100px;  /* Limite la largeur à 400px */
+    max-width: 200px;  /* Limite la largeur à 400px */
     margin-top: 20px;  /* Espacement entre le bouton et les autres éléments */
     transition: background-color 0.3s ease;  /* Animation pour un effet de survol */
   }
@@ -175,4 +175,181 @@
   .submitButton:hover {
     background-color: #1e8e06;  /* Changement de couleur au survol (vert plus foncé) */
   }
+  /* Responsive - Ajustement pour les écrans mobiles */
+@media (max-width: 768px) {
+  .formContainer {
+    width: 90%; /* Augmente la largeur du formulaire pour mieux s'adapter */
+    height: auto; /* Ajuste la hauteur automatiquement */
+    top: 0; /* Centre mieux le formulaire */
+    padding: 20px;
+  }
+
+  .childContainer {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Tous les champs en colonne */
+  .inputContainer,
+  .inputContainer2 {
+    flex-direction: column; /* Affiche les champs en colonne */
+    gap: 10px; /* Ajoute un peu d'espace entre les champs */
+  }
+
+  .inputField,
+  .inputFieldFullWidth {
+    width: 100%; /* Les champs prennent toute la largeur */
+  }
+
+  /* Ajustement du bouton */
+  .submitButton {
+    width: 100%; /* Pleine largeur pour une meilleure ergonomie */
+    max-width: none;
+  }
+}
+
+/* Responsive - Ajustement pour les écrans mobiles */
+@media (max-width: 768px) {
+  .formContainer {
+    width: 90%; /* Augmente la largeur du formulaire pour mieux s'adapter */
+    height: auto; /* Ajuste la hauteur automatiquement */
+    top: 0; /* Centre mieux le formulaire */
+    padding: 20px;
+  }
+
+  .childContainer {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Tous les champs en colonne */
+  .inputContainer,
+  .inputContainer2 {
+    flex-direction: column; /* Affiche les champs en colonne */
+    gap: 10px; /* Ajoute un peu d'espace entre les champs */
+  }
+
+  .inputField,
+  .inputFieldFullWidth {
+    width: 100%; /* Les champs prennent toute la largeur */
+  }
+
+  /* Ajustement du bouton */
+  .submitButton {
+    width: 100%; /* Pleine largeur pour une meilleure ergonomie */
+    max-width: none;
+  }
+}
+
+/* Gardez tout le CSS original inchangé jusqu'à la partie responsive */
+
+@media (max-width: 480px) {
+  .imageContainer {
+    height: auto;
+    min-height: 100vh;
   
+  }
+
+  .formContainer {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .childContainer {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Coins arrondis pour le fond des questions */
+    padding: 15px;
+  }
+
+  .formTitle {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .formTitle::before {
+    content: "Formulaire de réservation";
+    display: block;
+  }
+
+  .requiredText {
+    font-size: 14px;
+  }
+
+  .checkboxContainer label {
+    font-size: 14px;
+  }
+
+  .submitButton {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .presentationContainer {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    padding: 10px 15px;
+    margin: 15px 0;
+  }
+
+  .containerWrapper,
+  .containerWrapper2 {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .container1,
+  .container3,
+  .containerWrapper2 .container1 {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+  }
+
+  .containerImage {
+    height: 75%;
+  }
+
+  .transportText {
+    font-size: 1.4rem;
+    bottom: 45px;
+  }
+
+  .containerText {
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  /* Optimisation pour éviter le débordement horizontal */
+  .container1,
+  .container3 {
+    max-width: calc(100vw - 30px);
+  }
+
+  /* Amélioration de la lisibilité du texte */
+  .transportText {
+    padding: 8px 5px;
+    line-height: 1.2;
+  }
+
+  /* Ajustement des ombres pour mobile */
+  .container1,
+  .container3 {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+}

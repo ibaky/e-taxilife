@@ -171,3 +171,64 @@
     width: 100%;
   }
 }
+/* Styles desktop et 1024px existants conservés intégralement */
+
+/* Responsive Design pour 480px */
+@media (max-width: 480px) {
+  .mainSection,
+  .tarifSection,
+  .additionalSection {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .additionalImage,
+  .additionalImage img {
+    width: 100%;
+    max-height: 250px;
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .firstSection,
+  .secondSection {
+    height: auto;
+  }
+
+  .mainContent,
+  .tarifContent,
+  .additionalContent {
+    padding: 0;
+    width: 100%;
+  }
+
+  .mainContent h1,
+  .mainContent h2,
+  .tarifContent h2,
+  .additionalContent h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .mainContent p,
+  .tarifContent p,
+  .additionalContent p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .enSavoirPlus {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .phoneNumber {
+    font-size: 1rem;
+  }
+}

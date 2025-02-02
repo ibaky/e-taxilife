@@ -37,5 +37,41 @@
     padding: 10px 20px; /* Espacement autour du texte */
     border-radius: 8px; /* Coins arrondis */
   }
+  /* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .imageContainer {
+    height: 400px; /* Ajuste la hauteur sur tablette et mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imageContainer img {
+    object-fit: cover; /* Remplit le conteneur sans déformer l'image */
+    height: 100%;
+    width: 100%;
+  }
+
+  .centeredText {
+    font-size: 20px; /* Réduit la taille du texte pour les petits écrans */
+    padding: 5px 10px; /* Ajuste le padding pour un affichage optimal */
+    width: auto;
+    max-width: 90%; /* Évite que le texte prenne trop de place */
+  }
+}
+
+@media (max-width: 480px) {
+  .imageContainer {
+    height: 300px; /* Ajuste la hauteur sur les petits écrans */
+  }
+
+  .centeredText {
+    font-size: 18px; /* Ajuste encore la taille du texte */
+    padding: 5px; /* Moins d'espace autour */
+    width: auto;
+    max-width: 90%;
+  }
+}
+
   
   
