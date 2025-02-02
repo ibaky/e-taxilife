@@ -35,8 +35,8 @@ const TaxiEvenement = () => {
             et vos invités.
           </p>
           <p className={styles.sectionDescription}>
-            Profitez de nos véhicules de luxe soigneusement décorés pour l'occasion, 
-            avec un service personnalisé qui s'adapte à tous vos besoins.
+            Profitez de nos véhicules de luxe soigneusement décorés pour l&apos;occasion, 
+            avec un service personnalisé qui s&apos;adapte à tous vos besoins.
           </p>
           <button className={styles.reservationButton} onClick={handleReservation}>
             Réserver pour votre mariage
@@ -64,7 +64,7 @@ const TaxiEvenement = () => {
           <h2 className={styles.sectionTitle}>Service Limousine</h2>
           <p className={styles.sectionDescription}>
             Voyagez avec style dans nos limousines luxueuses. Un service premium 
-            pour vos événements spéciaux, rendez-vous d'affaires ou sorties en ville.
+            pour vos événements spéciaux, rendez-vous d&apos;affaires ou sorties en ville.
           </p>
           <p className={styles.sectionDescription}>
             Nos chauffeurs professionnels vous offrent une expérience exclusive avec un 
@@ -86,7 +86,7 @@ const TaxiEvenement = () => {
             ou événements professionnels.
           </p>
           <p className={styles.sectionDescription}>
-            Service disponible 24/7, réservation à l'avance ou sur demande immédiate.
+            Service disponible 24/7, réservation à l&apos;avance ou sur demande immédiate.
           </p>
           <button className={styles.reservationButton} onClick={handleReservation}>
             Réserver pour votre soirée
@@ -113,7 +113,7 @@ const TaxiEvenement = () => {
         <div className={styles.textBlock}>
           <h2 className={styles.sectionTitle}>Événements Professionnels</h2>
           <p className={styles.sectionDescription}>
-            Des solutions de transport sur mesure pour vos événements d'entreprise : 
+            Des solutions de transport sur mesure pour vos événements d&apos;entreprise : 
             séminaires, conférences, team buildings ou galas.
           </p>
           <p className={styles.sectionDescription}>

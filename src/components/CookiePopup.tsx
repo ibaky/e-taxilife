@@ -44,7 +44,7 @@ const CookiePopup: React.FC = () => {
           <h3 className={styles.title}>🍪 Nous respectons votre vie privée</h3>
           <p>
             Nous utilisons des cookies pour améliorer votre expérience sur notre site.
-            Vous pouvez choisir d'accepter ou de refuser leur utilisation.
+            Vous pouvez choisir d&apos;accepter ou de refuser leur utilisation.
           </p>
           <div className={styles.buttonContainer}>
             <button onClick={handleAccept} className={styles.acceptButton}>
