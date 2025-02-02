@@ -7,10 +7,6 @@ import Link from 'next/link';
 const TransportHospitalier: React.FC = () => {
   const { translations } = useLanguage();
   const { transportHospitalier } = translations;
-  
-  const handleReservation = () => {
-    window.location.href = '/contact';
-  };
 
   return (
     <div className="w-full pt-24 bg-gray-100">
