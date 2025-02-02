@@ -17,7 +17,7 @@
 
 /* Style différent pour chaque section */
 .firstSection {
-  height: 800px;
+  height: 900px;
   flex: 1;
   overflow: hidden;
 }
@@ -72,13 +72,13 @@
   transform: scale(1.02);
 }
 
-/* Contenu texte commun pour toutes les sections */
-.mainContent, .tarifContent, .additionalContent {
+/* Contenu texte */
+.additionalContent {
   flex: 1;
   padding: 0 2rem;
 }
 
-/* Style des titres communs */
+/* Style des titres */
 .mainContent h1,
 .mainContent h2,
 .tarifContent h2,
@@ -103,10 +103,10 @@
   height: 3px;
   bottom: -10px;
   left: 0;
-  background-color: #28a745;
+  background-color: #24f109;
 }
 
-/* Style du texte principal commun */
+/* Style du texte principal */
 .mainContent p,
 .tarifContent p,
 .additionalContent p {
@@ -122,7 +122,7 @@
   display: inline-block;
   margin-top: 2rem;
   color: #fff;
-  background-color: #28a745;
+  background-color: #24f109;
   padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
@@ -132,15 +132,8 @@
 }
 
 .enSavoirPlus:hover {
-  background-color: #218838;
+  background-color: #1ca506;
   transform: translateY(-2px);
-}
-
-/* Numéro de téléphone */
-.phoneNumber {
-  color: #28a745;
-  font-size: 1.25rem;
-  font-weight: 700;
 }
 
 /* Responsive Design */

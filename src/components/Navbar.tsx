@@ -86,8 +86,8 @@ const Navbar: React.FC = () => {
            </Link>
          </li>
          <li>
-           <Link href="/transport-de-colis" className={styles.navLink}>
-             {language === 'fr' ? 'Transport de colis' : 'Parcel Transport'}
+            <Link href="/transport-colis" className={styles.navLink}>
+              {language === 'fr' ? 'Transport de colis' : 'Parcel Transport'}
            </Link>
          </li>
          <li>

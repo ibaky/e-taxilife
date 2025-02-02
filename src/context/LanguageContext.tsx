@@ -145,6 +145,91 @@ interface LongDistanceTranslations {
   };
 }
 
+interface TransportPriveeTranslations {
+  breadcrumb: {
+    home: string;
+    privateTransport: string;
+  };
+  mainSection: {
+    title: string;
+    subtitle: string;
+    description: string;
+  };
+  services: {
+    title: string;
+    description1: string;
+    description2: string;
+  };
+  metropole: {
+    title: string;
+    description1: string;
+    description2: string;
+  };
+  eco: {
+    title: string;
+    description1: string;
+    description2: string;
+  };
+  booking: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+}
+
+interface TransportHospitalierTranslations {
+  consultations: {
+    title: string;
+    description1: string;
+    description2: string;
+  };
+  hospitalisation: {
+    title: string;
+    description1: string;
+    description2: string;
+  };
+  mobiliteReduite: {
+    title: string;
+    description1: string;
+    description2: string;
+  };
+  reservation: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+}
+
+interface TransportColisTranslations {
+  breadcrumb: {
+    home: string;
+    parcelTransport: string;
+  };
+  mainSection: {
+    title: string;
+    description1: string;
+    description2: string;
+  };
+  express: {
+    title: string;
+    description: string;
+    services: string[];
+    learnMore: string;
+  };
+  business: {
+    title: string;
+    description: string;
+    services: string[];
+    learnMore: string;
+  };
+  personal: {
+    title: string;
+    description: string;
+    services: string[];
+    learnMore: string;
+  };
+}
+
 interface Translations {
   nav: NavigationTranslations;
   hero: HeroTranslations;
@@ -153,22 +238,15 @@ interface Translations {
   garantie: GarantieTranslations;
   footer: FooterTranslations;
   longDistance: LongDistanceTranslations;
+  transportPrivee: TransportPriveeTranslations;
+  transportHospitalier: TransportHospitalierTranslations;
+  transportColis: TransportColisTranslations;
 }
 
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  translations: Translations;
-}
-
-// Création du contexte
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-// Définition des traductions
 const translations: Record<Language, Translations> = {
   fr: {
     nav: {
-      transportPrivate: "Transport Privée",
+      transportPrivate: "Transport Privé",
       longDistance: "Trajet longue distance",
       hospitalTransport: "Transport hospitalier",
       parcelTransport: "Transport de colis",
@@ -190,7 +268,7 @@ const translations: Record<Language, Translations> = {
       hours: "Heures",
       date: "Date de prise en charge",
       agreement: "En soumettant ce formulaire, j'accepte que les informations saisies soient traitées par E-taxilife-rouen metropole dans le cadre de ma demande de contact et de la relation commerciale qui peut en découler.",
-      submitButton: "Envoyer",
+      submitButton: "Réserver maintenant",
       errors: {
         name: "Le nom est requis",
         lastName: "Le prénom est requis",
@@ -208,19 +286,11 @@ const translations: Record<Language, Translations> = {
       policy: "En savoir plus en consultant notre politique de confidentialité",
       unknownError: "Une erreur inconnue est survenue"
     },
-    garantie: {
-      title: "Nous vous",
-      subtitle: "garantissons",
-      electricTaxi: "Taxi Electrique",
-      transportForAll: "Transport pour tous",
-      available24_7: "Standard disponible 24h/7",
-      imageAlt: "Image de garantie"
-    },
     presentation: {
       title: "Nos prestations",
       services: {
         privateTransport: {
-          title: "Transport Privée",
+          title: "Transport Privé",
           content: "Service de transport privé personnalisé"
         },
         longDistance: {
@@ -240,6 +310,14 @@ const translations: Record<Language, Translations> = {
           content: "Service pour vos événements spéciaux"
         }
       }
+    },
+    garantie: {
+      title: "Nous vous",
+      subtitle: "garantissons",
+      electricTaxi: "Taxi Electrique",
+      transportForAll: "Transport pour tous",
+      available24_7: "Standard disponible 24h/7",
+      imageAlt: "Image de garantie"
     },
     footer: {
       contactTitle: "Contact-moi",
@@ -285,12 +363,12 @@ const translations: Record<Language, Translations> = {
       },
       beauvais: {
         title: "Taxi pour un transport de Rouen à l'aéroport de Beauvais",
-        description: "Besoin d'un taxi pour vous rendre à l'aéroport de Beauvais au départ de Rouen ? Les Taxis sont à votre disposition ! Avec nos 120 chauffeurs expérimentés, vous êtes assurés de trouver le taxi qu'il vous faut. Nos services comprennent : Un trajet d'environ 1h30 dans des conditions optimales, une prise en charge à votre domicile ou à l'adresse de votre choix, une assistance avec vos bagages, et un suivi en temps réel des vols pour adapter les horaires si nécessaire. Nous connaissons parfaitement les spécificités de l'aéroport de Beauvais et ses différents terminaux. Notre objectif est de vous permettre d'arriver sereinement et à l'heure pour votre vol, sans le stress de la conduite ou du stationnement.",
+        description: "Besoin d'un taxi pour vous rendre à l'aéroport de Beauvais au départ de Rouen ? Les Taxis sont à votre disposition ! Avec nos 120 chauffeurs expérimentés, vous êtes assurés de trouver le taxi qu'il vous faut. Nos services comprennent : Un trajet d'environ 1h30 dans des conditions optimales, une prise en charge à votre domicile ou à l'adresse de votre choix, une assistance avec vos bagages, et un suivi en temps réel des vols pour adapter les horaires si nécessaire.",
         learnMore: "EN SAVOIR PLUS →"
       },
       charlesDeGaulle: {
         title: "Taxi pour un trajet longue distance à l'aéroport Paris Charles de Gaulle",
-        description: "Nous vous proposons un service de taxi premium pour vos trajets vers l'aéroport Charles de Gaulle. Un service professionnel et ponctuel, adapté aux exigences des voyageurs d'affaires comme des particuliers. Le trajet Rouen-Charles de Gaulle est l'un de nos itinéraires les plus fréquents. Nos chauffeurs connaissent parfaitement les différents terminaux et les accès les plus rapides selon les horaires.",
+        description: "Nous vous proposons un service de taxi premium pour vos trajets vers l'aéroport Charles de Gaulle. Un service professionnel et ponctuel, adapté aux exigences des voyageurs d'affaires comme des particuliers.",
         services: [
           "Un temps de trajet optimisé grâce à notre connaissance du trafic parisien",
           "Une surveillance en temps réel des conditions de circulation",
@@ -302,7 +380,7 @@ const translations: Record<Language, Translations> = {
       },
       orly: {
         title: "Transport aéroport Orly depuis Rouen",
-        description: "Service de taxi disponible pour vos trajets vers l'aéroport d'Orly. Confort et ponctualité garantis pour tous vos déplacements. Notre expertise sur cet axe nous permet de vous offrir : Une prise en charge personnalisée et un accompagnement complet depuis Rouen jusqu'à votre terminal à Orly. Le trajet dure environ 2 heures, pendant lesquelles vous profiterez du confort de nos véhicules haut de gamme. Nous desservons les différents terminaux d'Orly (Ouest et Sud) et adaptons notre service selon vos besoins :",
+        description: "Service de taxi disponible pour vos trajets vers l'aéroport d'Orly. Confort et ponctualité garantis pour tous vos déplacements.",
         services: [
           "Trajets tôt le matin ou tard le soir",
           "Transport de bagages volumineux",
@@ -311,6 +389,102 @@ const translations: Record<Language, Translations> = {
           "Suivi en temps réel de votre trajet"
         ],
         learnMore: "EN SAVOIR PLUS →"
+      }
+    },
+    transportPrivee: {
+      breadcrumb: {
+        home: "Accueil",
+        privateTransport: "Transport Privé"
+      },
+      mainSection: {
+        title: "Service de transport privé premium à Rouen",
+        subtitle: "Faites confiance à e-TaxiLife pour tous vos déplacements",
+        description: "Votre partenaire de confiance pour tous vos déplacements dans la région rouennaise"
+      },services: {
+        title: "Un service sur-mesure et confortable",
+        description1: "Nos chauffeurs expérimentés assurent des trajets ponctuels et confortables, 24h/24 et 7j/7.",
+        description2: "Avec notre flotte de véhicules haut de gamme, vous bénéficiez d'un confort optimal et d'un service irréprochable."
+      },
+      metropole: {
+        title: "Une couverture étendue dans la métropole rouennaise",
+        description1: "Que vous ayez besoin de vous déplacer dans Rouen ou dans les communes environnantes.",
+        description2: "Grâce à notre connaissance approfondie de la région, nos chauffeurs empruntent les itinéraires les plus efficaces."
+      },
+      eco: {
+        title: "Un transport responsable et écologique",
+        description1: "Soucieux de notre impact environnemental, nous sommes fiers de proposer une flotte 100% électrique.",
+        description2: "En choisissant e-TaxiLife, vous optez pour une solution de transport durable."
+      },
+      booking: {
+        title: "Réservez votre transport privé",
+        description: "Nos équipes sont à votre écoute pour vous proposer la meilleure solution de transport.",
+        buttonText: "Réserver maintenant"
+      }
+    },
+    transportHospitalier: {
+      consultations: {
+        title: "Transport pour consultations médicales",
+        description1: "Notre service de transport pour consultations médicales est conçu pour vous accompagner dans tous vos rendez-vous médicaux, examens et analyses.",
+        description2: "Nous assurons la ponctualité et le confort nécessaires pour vos déplacements médicaux, avec une assistance personnalisée si besoin."
+      },
+      hospitalisation: {
+        title: "Transport pour hospitalisation",
+        description1: "Pour vos entrées et sorties d'hôpital, nous vous garantissons un transport adapté à votre état de santé, avec une prise en charge complète.",
+        description2: "Nos véhicules sont équipés pour assurer votre confort et notre équipe est formée aux spécificités du transport médical."
+      },
+      mobiliteReduite: {
+        title: "Transport adapté mobilité réduite",
+        description1: "Nos véhicules sont spécialement aménagés pour le transport des personnes à mobilité réduite, avec équipements adaptés et accès facilité.",
+        description2: "Notre personnel est formé aux techniques d'aide à la mobilité et à l'accompagnement des personnes en situation de handicap."
+      },
+      reservation: {
+        title: "Réserver votre transport médical",
+        description: "Pour réserver votre transport médical, contactez-nous par téléphone ou utilisez notre formulaire en ligne. Nous vous répondrons dans les plus brefs délais pour organiser votre déplacement.",
+        buttonText: "Réserver maintenant"
+      }
+    },
+    transportColis: {
+      breadcrumb: {
+        home: "Accueil",
+        parcelTransport: "Transport de colis"
+      },
+      mainSection: {
+        title: "Transport de colis express sur Rouen et sa métropole",
+        description1: "Notre service de transport de colis express garantit une livraison rapide et sécurisée de vos biens, 24h/24 et 7j/7.",
+        description2: "Que ce soit pour des documents importants, des colis urgents ou des marchandises délicates, nous assurons un service professionnel et ponctuel."
+      },
+      express: {
+        title: "Service Express",
+        description: "Notre service de livraison express est conçu pour répondre à vos besoins urgents :",
+        services: [
+          "Livraison en moins de 2 heures sur Rouen et sa métropole",
+          "Service disponible 24h/24 et 7j/7",
+          "Suivi en temps réel de votre colis",
+          "Confirmation de livraison immédiate"
+        ],
+        learnMore: "En savoir plus"
+      },
+      business: {
+        title: "Services aux entreprises",
+        description: "Solutions logistiques adaptées aux besoins des professionnels :",
+        services: [
+          "Transport de documents confidentiels",
+          "Livraison de pièces détachées",
+          "Distribution de marchandises",
+          "Contrats sur-mesure"
+        ],
+        learnMore: "Contactez-nous"
+      },
+      personal: {
+        title: "Services aux particuliers",
+        description: "Des solutions de transport adaptées à vos besoins personnels :",
+        services: [
+          "Transport de colis personnels",
+          "Livraison de courses et achats",
+          "Envoi de cadeaux",
+          "Transport d'objets fragiles"
+        ],
+        learnMore: "Réserver maintenant"
       }
     }
   },
@@ -337,8 +511,8 @@ const translations: Record<Language, Translations> = {
       luggage: "Number of Luggage",
       hours: "Hours",
       date: "Pickup Date",
-      agreement: "By submitting this form, I agree that the information will be processed by E-taxilife-rouen metropole as part of my contact request and potential business relationship.",
-      submitButton: "Submit",
+      agreement: "By submitting this form, I agree that the information entered will be processed by E-taxilife-rouen metropole as part of my contact request and potential business relationship.",
+      submitButton: "Book Now",
       errors: {
         name: "Name is required",
         lastName: "First name is required",
@@ -346,7 +520,7 @@ const translations: Record<Language, Translations> = {
         startAddress: "Pickup address is required",
         endAddress: "Destination address is required",
         passengers: "Number of passengers is required",
-        luggage: "Number of luggage items is required",
+        luggage: "Number of luggage is required",
         date: "Pickup date is required",
         agreement: "You must accept the terms and conditions"
       },
@@ -355,14 +529,6 @@ const translations: Record<Language, Translations> = {
       serverError: "Server connection error",
       policy: "Learn more by consulting our privacy policy",
       unknownError: "An unknown error occurred"
-    },
-    garantie: {
-      title: "We",
-      subtitle: "guarantee you",
-      electricTaxi: "Electric Taxi",
-      transportForAll: "Transport for All",
-      available24_7: "Available 24/7",
-      imageAlt: "Guarantee image"
     },
     presentation: {
       title: "Our Services",
@@ -388,6 +554,14 @@ const translations: Record<Language, Translations> = {
           content: "Service for your special events"
         }
       }
+    },
+    garantie: {
+      title: "We",
+      subtitle: "guarantee you",
+      electricTaxi: "Electric Taxi",
+      transportForAll: "Transport for All",
+      available24_7: "Available 24/7",
+      imageAlt: "Guarantee image"
     },
     footer: {
       contactTitle: "Contact Us",
@@ -421,8 +595,8 @@ const translations: Record<Language, Translations> = {
       },
       mainSection: {
         title: "Long-distance taxi service from Rouen (76)",
-        description1: "Are you living in or staying in Rouen 76 and looking for a taxi for a long-distance journey? e-TaxiLife is here for you. Whether you need to get to an airport, a train station, or any other destination outside of Seine Maritime 76, we can take you wherever you wish to go.",
-        description2: "Whether traveling alone or in a group, simply call us, tell us your needs, and we'll find you a driver with a suitable vehicle. If you're looking for a taxi for any long-distance journey, contact us at 06 12 34 56 78 or fill out the contact form. We'll be delighted to assist you."
+        description1: "Living in or staying in Rouen 76 and looking for a taxi for a long-distance journey? e-TaxiLife is here for you. Whether you need to get to an airport, train station, or any destination outside Seine Maritime 76, we can take you wherever you wish.",
+        description2: "Whether traveling alone or in a group, simply call us, tell us your needs, and we'll find you a driver with a suitable vehicle. Looking for a taxi for any long-distance journey? Contact us at 06 12 34 56 78 or fill out the contact form. We'll be delighted to assist you."
       },
       rouenAmiens: {
         title: "Taxi fare from Rouen to Amiens",
@@ -433,38 +607,140 @@ const translations: Record<Language, Translations> = {
       },
       beauvais: {
         title: "Taxi service from Rouen to Beauvais Airport",
-        description: "Need a taxi to get to Beauvais Airport from Rouen? Our Taxis are at your service! With our 120 experienced drivers, you're sure to find the taxi you need. Our services include: A journey of approximately 1.5 hours under optimal conditions, pickup at your home or chosen address, assistance with your luggage, and real-time flight monitoring to adjust schedules if necessary. We are thoroughly familiar with Beauvais Airport's specifics and its different terminals. Our goal is to ensure you arrive calmly and on time for your flight, without the stress of driving or parking.",
+        description: "Need a taxi to Beauvais Airport from Rouen? Our taxis are at your service! With 120 experienced drivers, you're sure to find the right taxi. Our services include: A journey of approximately 1.5 hours under optimal conditions, pickup at your home or chosen address, assistance with luggage, and real-time flight monitoring to adjust schedules if needed.",
         learnMore: "LEARN MORE →"
       },
       charlesDeGaulle: {
         title: "Long-distance taxi service to Paris Charles de Gaulle Airport",
-        description: "We offer a premium taxi service for your journeys to Charles de Gaulle Airport. A professional and punctual service, adapted to the requirements of both business and leisure travelers. The Rouen-Charles de Gaulle route is one of our most frequent itineraries. Our drivers know perfectly well the different terminals and the fastest access routes depending on the time.",
+        description: "We offer premium taxi service for your Charles de Gaulle Airport journeys. Professional and punctual service, adapted for both business and leisure travelers.",
         services: [
-          "Optimized journey time thanks to our knowledge of Parisian traffic",
+          "Optimized journey time with our Paris traffic knowledge",
           "Real-time traffic monitoring",
-          "Spacious and comfortable vehicles, ideal for long journeys",
-          "Pickup available very early in the morning or late at night",
-          "Flight tracking service to adjust pickup time if necessary"
+          "Spacious, comfortable vehicles ideal for long trips",
+          "Early morning or late night pickup available",
+          "Flight tracking service to adjust pickup time if needed"
         ],
         learnMore: "LEARN MORE →"
       },
       orly: {
         title: "Airport transfer to Orly from Rouen",
-        description: "Taxi service available for your journeys to Orly Airport. Guaranteed comfort and punctuality for all your travels. Our expertise on this route allows us to offer you: Personalized pickup and complete assistance from Rouen to your terminal at Orly. The journey takes approximately 2 hours, during which you'll enjoy the comfort of our premium vehicles. We serve different Orly terminals (West and South) and adapt our service to your needs:",
+        description: "Taxi service available for Orly Airport journeys. Guaranteed comfort and punctuality for all your travels.",
         services: [
           "Early morning or late night journeys",
-          "Transport of bulky luggage",
+          "Bulky luggage transport",
           "Child seats on request",
           "Welcome with name sign",
           "Real-time journey tracking"
         ],
         learnMore: "LEARN MORE →"
       }
+    },
+    transportPrivee: {
+      breadcrumb: {
+        home: "Home",
+        privateTransport: "Private Transport"
+      },
+      mainSection: {
+        title: "Premium private transport service in Rouen",
+        subtitle: "Trust e-TaxiLife for all your travel needs",
+        description: "Your trusted partner for all your travels in the Rouen region"
+      },
+      services: {
+        title: "Tailored and comfortable service",
+        description1: "Our experienced drivers ensure punctual and comfortable journeys, 24/7.",
+        description2: "With our fleet of premium vehicles, you benefit from optimal comfort and impeccable service."
+      },
+      metropole: {
+        title: "Extended coverage in the Rouen metropolitan area",
+        description1: "Whether you need to travel in Rouen or in the surrounding municipalities.",
+        description2: "Thanks to our in-depth knowledge of the region, our drivers take the most efficient routes."
+      },
+      eco: {
+        title: "Responsible and ecological transport",
+        description1: "Concerned about our environmental impact, we are proud to offer a 100% electric fleet.",
+        description2: "By choosing e-TaxiLife, you opt for a sustainable transport solution."
+      },
+      booking: {
+        title: "Book your private transport",
+        description: "Our teams are here to offer you the best transport solution.",
+        buttonText: "Book now"
+      }
+    },
+    transportHospitalier: {
+      consultations: {
+        title: "Medical Consultation Transport",
+        description1: "Our medical consultation transport service is designed to accompany you to all your medical appointments, examinations, and analyses.",
+        description2: "We ensure punctuality and comfort for your medical travel needs, with personalized assistance if required."
+      },
+      hospitalisation: {
+        title: "Hospital Transport",
+        description1: "For your hospital admissions and discharges, we guarantee transport adapted to your health condition, with comprehensive care.",
+        description2: "Our vehicles are equipped to ensure your comfort and our team is trained in the specifics of medical transport."
+      },
+      mobiliteReduite: {
+        title: "Adapted Transport for Reduced Mobility",
+        description1: "Our vehicles are specially equipped for transporting people with reduced mobility, with adapted equipment and facilitated access.",
+        description2: "Our staff is trained in mobility assistance techniques and accompanying people with disabilities."
+      },
+      reservation: {
+        title: "Book Your Medical Transport",
+        description: "To book your medical transport, contact us by phone or use our online form. We will respond as soon as possible to organize your journey.",
+        buttonText: "Book Now"
+      }
+    },
+    transportColis: {
+      breadcrumb: {
+        home: "Home",
+        parcelTransport: "Parcel Transport"
+      },
+      mainSection: {
+        title: "Express Parcel Transport in Rouen and Metropolitan Area",
+        description1: "Our express parcel transport service ensures fast and secure delivery of your goods, 24/7.",
+        description2: "Whether for important documents, urgent packages, or delicate goods, we provide professional and punctual service."
+      },
+      express: {
+        title: "Express Service",
+        description: "Our express delivery service is designed to meet your urgent needs:",
+        services: [
+          "Delivery within 2 hours in Rouen and metropolitan area",
+          "Service available 24/7",
+          "Real-time package tracking",
+          "Immediate delivery confirmation"
+        ],
+        learnMore: "Learn more"
+      },
+      business: {
+        title: "Business Services",
+        description: "Logistics solutions adapted to professional needs:",
+        services: [
+          "Confidential document transport",
+          "Spare parts delivery",
+          "Goods distribution",
+          "Custom contracts"
+        ],
+        learnMore: "Contact us"
+      },
+      personal: {
+        title: "Personal Services",
+        description: "Transport solutions adapted to your personal needs:",
+        services: [
+          "Personal parcel transport",
+          "Shopping and purchase delivery",
+          "Gift delivery",
+          "Fragile items transport"
+        ],
+        learnMore: "Book now"
+      }
     }
   }
 };
+const LanguageContext = createContext<{
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  translations: Translations;
+} | undefined>(undefined);
 
-// Export du Provider et du hook
+// Provider Component
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('fr');
 
@@ -475,6 +751,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// Hook personnalisé pour utiliser le context
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (!context) {

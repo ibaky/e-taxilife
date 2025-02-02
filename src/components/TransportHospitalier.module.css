@@ -1,0 +1,226 @@
+/* Container principal */
+.transportHospitalierContainer {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+  }
+  
+  /* Sections principales */
+  .contentSection {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 3rem 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .contentSection:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Images avec effet de zoom */
+  .sectionImage,
+  .sectionImageLarger,
+  .sectionImageSmaller {
+    width: 50%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+  }
+  
+  .sectionImageLarger {
+    height: 600px;
+  }
+  
+  .sectionImageSmaller {
+    height: 400px;
+  }
+  
+  .sectionImage:hover,
+  .sectionImageLarger:hover,
+  .sectionImageSmaller:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Bloc de texte */
+  .textBlock {
+    flex: 1;
+    padding: 0 2rem;
+  }
+  
+  /* Titres */
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sectionTitle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+    background-color: #28a745;
+  }
+  
+  /* Description */
+  .sectionDescription {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+  
+  /* Bouton de réservation */
+  .reservationButton {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #fff;
+    background-color: #28a745;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .reservationButton:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+  }
+  
+  /* Effet de survol sur les sections */
+  .contentSection:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles spéciaux pour la première section */
+  .contentSection:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Styles spéciaux pour la dernière section */
+  .contentSection:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  /* Animation pour les sections lors de leur apparition */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contentSection {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .contentSection {
+      flex-direction: column;
+      padding: 2rem 1rem;
+      margin: 2rem 0;
+    }
+  
+    .textBlock {
+      padding: 2rem 1rem;
+      width: 100%;
+    }
+  
+    .sectionImage,
+    .sectionImageLarger,
+    .sectionImageSmaller {
+      width: 100%;
+      height: 300px;
+    }
+  
+    .sectionTitle {
+      font-size: 2rem;
+    }
+  
+    .sectionDescription {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contentSection {
+      padding: 1.5rem 1rem;
+      margin: 1.5rem 0;
+    }
+  
+    .sectionTitle {
+      font-size: 1.75rem;
+    }
+  
+    .sectionImage,
+    .sectionImageLarger,
+    .sectionImageSmaller {
+      height: 250px;
+    }
+  
+    .reservationButton {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+    }
+  }
+  
+  /* Styles d'accessibilité */
+  @media (prefers-reduced-motion: reduce) {
+    .contentSection,
+    .sectionImage,
+    .sectionImageLarger,
+    .sectionImageSmaller,
+    .reservationButton {
+      transition: none;
+      animation: none;
+    }
+  }
+  
+  /* Focus styles pour l'accessibilité */
+  .reservationButton:focus {
+    outline: 3px solid #28a745;
+    outline-offset: 2px;
+  }
+  
+  /* Styles pour le mode sombre */
+  @media (prefers-color-scheme: dark) {
+    .contentSection {
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    }
+  
+    .sectionTitle {
+      color: #ffffff;
+    }
+  
+    .sectionDescription {
+      color: #e0e0e0;
+    }
+  }
