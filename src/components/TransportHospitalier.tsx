@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image'; // ✅ Import du composant Image de Next.js
 import styles from './TransportHospitalier.module.css';
 import { useLanguage } from '../context/LanguageContext';
 import Link from 'next/link';
@@ -13,10 +14,11 @@ const TransportHospitalier: React.FC = () => {
       <div className={styles.transportHospitalierContainer}>
         {/* Section Consultations */}
         <section className={`${styles.contentSection} mt-16`}>
-          <img
-            src="image/taxi-arrivee-hopital.webp"
+          <Image
+            src="/image/taxi-arrivee-hopital.webp"
             alt={transportHospitalier.consultations.title}
             className={styles.sectionImage}
+            width={500} height={300} // ✅ Ajout des dimensions pour Next.js
           />
           <div className={styles.textBlock}>
             <h2 className={styles.sectionTitle}>
@@ -44,19 +46,21 @@ const TransportHospitalier: React.FC = () => {
               {transportHospitalier.hospitalisation.description2}
             </p>
           </div>
-          <img
-            src="image/charles_nicolles.jpg"
+          <Image
+            src="/image/charles_nicolles.jpg"
             alt={transportHospitalier.hospitalisation.title}
             className={styles.sectionImage}
+            width={500} height={300}
           />
         </section>
 
         {/* Section Mobilité Réduite */}
         <section className={styles.contentSection}>
-          <img
-            src="image/taxi-ambulance-louhans-9.jpg"
+          <Image
+            src="/image/taxi-ambulance-louhans-9.jpg"
             alt={transportHospitalier.mobiliteReduite.title}
             className={styles.sectionImage}
+            width={500} height={300}
           />
           <div className={styles.textBlock}>
             <h2 className={styles.sectionTitle}>
