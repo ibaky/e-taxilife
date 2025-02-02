@@ -7,28 +7,37 @@ const MobileNav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      setIsScrolled(offset > 50);
+      if (typeof window !== "undefined") {
+        const offset = window.scrollY;
+        setIsScrolled(offset > 50);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToElement = (id: string) => {
+    if (typeof document !== "undefined") {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav className={`${styles.mobileNav} ${isScrolled ? styles.scrolled : ''}`}>
       <a href="#reservation" className={styles.navItem} onClick={(e) => {
         e.preventDefault();
-        const element = document.getElementById('reservation');
-        element?.scrollIntoView({ behavior: 'smooth' });
+        scrollToElement('reservation');
       }}>
         <Calendar size={20} />
         <span>RÉSERVER</span>
       </a>
       <a href="#contact" className={styles.navItem} onClick={(e) => {
         e.preventDefault();
-        const element = document.getElementById('contact');
-        element?.scrollIntoView({ behavior: 'smooth' });
+        scrollToElement('contact');
       }}>
         <Mail size={20} />
         <span>CONTACT</span>
