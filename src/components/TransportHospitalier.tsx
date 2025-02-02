@@ -1,9 +1,10 @@
-"use client";
-import React from 'react';
-import Image from 'next/image'; // ✅ Import du composant Image de Next.js
-import styles from './TransportHospitalier.module.css';
-import { useLanguage } from '../context/LanguageContext';
-import Link from 'next/link';
+"use client"; // ✅ Ajouté pour forcer le rendu côté client
+
+import React from "react";
+import Image from "next/image"; 
+import styles from "./TransportHospitalier.module.css";
+import { useLanguage } from "../context/LanguageContext";
+import Link from "next/link";
 
 const TransportHospitalier: React.FC = () => {
   const { translations } = useLanguage();
@@ -12,13 +13,15 @@ const TransportHospitalier: React.FC = () => {
   return (
     <div className="w-full pt-24 bg-gray-100">
       <div className={styles.transportHospitalierContainer}>
+
         {/* Section Consultations */}
         <section className={`${styles.contentSection} mt-16`}>
           <Image
             src="/image/taxi-arrivee-hopital.webp"
             alt={transportHospitalier.consultations.title}
             className={styles.sectionImage}
-            width={500} height={300} // ✅ Ajout des dimensions pour Next.js
+            width={500}
+            height={300} // ✅ Ajouté pour Next.js
           />
           <div className={styles.textBlock}>
             <h2 className={styles.sectionTitle}>
@@ -50,7 +53,8 @@ const TransportHospitalier: React.FC = () => {
             src="/image/charles_nicolles.jpg"
             alt={transportHospitalier.hospitalisation.title}
             className={styles.sectionImage}
-            width={500} height={300}
+            width={500}
+            height={300}
           />
         </section>
 
@@ -60,7 +64,8 @@ const TransportHospitalier: React.FC = () => {
             src="/image/taxi-ambulance-louhans-9.jpg"
             alt={transportHospitalier.mobiliteReduite.title}
             className={styles.sectionImage}
-            width={500} height={300}
+            width={500}
+            height={300}
           />
           <div className={styles.textBlock}>
             <h2 className={styles.sectionTitle}>
@@ -84,7 +89,7 @@ const TransportHospitalier: React.FC = () => {
             <p className={styles.sectionDescription}>
               {transportHospitalier.reservation.description}
             </p>
-            <Link 
+            <Link
               href="/contact"
               className={styles.reservationButton}
               aria-label={transportHospitalier.reservation.buttonText}
@@ -97,5 +102,8 @@ const TransportHospitalier: React.FC = () => {
     </div>
   );
 };
+
+// ✅ Désactive la pré-génération statique pour éviter les erreurs de `document`
+export const dynamic = "force-dynamic";
 
 export default TransportHospitalier;

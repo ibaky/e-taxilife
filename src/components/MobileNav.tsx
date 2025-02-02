@@ -1,4 +1,5 @@
-"use client";
+"use client"; // Force l'exécution côté client
+
 import React, { useState, useEffect } from 'react';
 import { Calendar, Mail, Phone } from 'lucide-react';
 import styles from './mobilenav.module.css';
@@ -8,17 +9,21 @@ const MobileNav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (typeof window !== "undefined") {
+        const offset = window.scrollY;
+        setIsScrolled(offset > 50);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleScrollToSection = (id: string) => {
-    if (typeof window !== "undefined" && typeof document !== "undefined") {
+  // Fonction pour scroller en douceur
+  const scrollToElement = (id: string) => {
+    if (typeof window !== "undefined") {
       const element = document.getElementById(id);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      element?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -26,14 +31,14 @@ const MobileNav = () => {
     <nav className={`${styles.mobileNav} ${isScrolled ? styles.scrolled : ''}`}>
       <a href="#reservation" className={styles.navItem} onClick={(e) => {
         e.preventDefault();
-        handleScrollToSection("reservation");
+        scrollToElement("reservation");
       }}>
         <Calendar size={20} />
         <span>RÉSERVER</span>
       </a>
       <a href="#contact" className={styles.navItem} onClick={(e) => {
         e.preventDefault();
-        handleScrollToSection("contact");
+        scrollToElement("contact");
       }}>
         <Mail size={20} />
         <span>CONTACT</span>
